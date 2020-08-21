@@ -15,7 +15,7 @@ user1 = User.create!(
   last_name: "Deboutin",
   email: "test1@gmail.com",
   password: "password",
-  role: "recruiter"
+  role: "Recruiter"
 )
 
 # puts "#{User.count} users created"
