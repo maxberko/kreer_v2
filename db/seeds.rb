@@ -15,36 +15,36 @@ user1 = User.create!(
   last_name: "Deboutin",
   email: "test1@gmail.com",
   password: "password",
-  role: "recruiter"
+  role: "Recruiter"
 )
 
 puts "#{User.count} users created"
 
 question1 = Question.create!(
-description: "How would you price a brand new Kindle book?",
-tag: "Pricing"
+  description: "How would you price a brand new Kindle book?",
+  tag: "Pricing"
 )
 
 question2 = Question.create!(
-description: "How would you set success metrics for FB dating?",
-tag: "Product Execution"
+  description: "How would you set success metrics for FB dating?",
+  tag: "Product Execution"
 )
 
 question3 = Question.create!(
-description: "What goals would you set for growth for Facebook Lite?",
-tag: "Product Execution"
+  description: "What goals would you set for growth for Facebook Lite?",
+  tag: "Product Execution"
 )
 
 question4 = Question.create!(
-description: "How do you price Amazon S3 new tier?",
-tag: "Pricing"
+  description: "How do you price Amazon S3 new tier?",
+  tag: "Pricing"
 )
 puts "#{Question.count} questions created"
 
 test1 = Test.new(
-name: "Apple",
-jobtype: "Product Manager",
-user: User.last
+  name: "Apple",
+  jobtype: "Product Manager",
+  user: User.last
 )
 test1.tag_list.add("Pricing")
 test1.save

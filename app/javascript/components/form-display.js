@@ -10,7 +10,6 @@ const firstSection = document.querySelector("#first-section");
 
 
 firstBtn.addEventListener("click", (event) => {
-  console.log("Hello");
   secondSection.style.display = "block";
   firstSection.style.display = "none";
   });
