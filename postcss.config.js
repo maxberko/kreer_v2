@@ -1,4 +1,4 @@
-let environment = {
+module.exports = {
   plugins: [
     require('postcss-import'),
     require('tailwindcss'),
@@ -11,17 +11,4 @@ let environment = {
       stage: 3
     })
   ]
-};
-
-if (process.env.RAILS_NEW === "production") {
-  environment.plugins.push(
-    require('@fullhuman/postcss-purgecss')({
-      content: [
-        './app/**/*.html.erb',
-        './app/helpers/**/*.rb',
-        './app/helpers/**/*.js',
-      ],
-      defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:]+/g) || []
-    })
-  )
 }
