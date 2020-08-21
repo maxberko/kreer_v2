@@ -1,17 +1,24 @@
-<h1>Here is the recruiter dashboard</h1>
 <section class="text-gray-700 body-font">
 
   <% if @tests.count == 0 %>
     <div>
-      <p>Welcome on <strong>K-reer </strong>! Here is your dashboard. You will see all of your recruitment campaign. In just one click you can access to your campaign results. You can also share the link of your campaign to your candidates.</p>
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto">
-          <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">You do not have any campaign yet. Click here to create you first campaign.</h1>
-            <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"><%= link_to 'create my first campaign', new_test_path %></button>
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Welcome on <strong>K-reer </strong>!</h2>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Here is your Recruiter dashboard</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In this place you have access to all of your recruitment campaigns.<br> In just one click you can access to your campaign results.<br> You can also share the link of your campaign to your candidates.</p>
           </div>
+          <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Create you first campaign now ! </h1>
+            <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"><%= link_to 'New campaign', new_test_path %></button>
+          </div>
+        <div class="container px-5 py-24 mx-auto">
+        </div>
         </div>
       </section>
+
+
     </div>
 
   <% else %>

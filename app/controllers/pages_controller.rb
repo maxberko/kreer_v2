@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # todo
+    @tests = current_user.tests
   end
 end
