@@ -7,6 +7,8 @@ class TestsController < ApplicationController
 
   def show
     # todo
+    @test = Test.find(params[:id])
+    @questions = @test.questions
   end
 
   def new
@@ -23,9 +25,9 @@ class TestsController < ApplicationController
     end
   end
 
-    private
+  private
 
   def test_params
     params.require(:test).permit(:name, :jobtype, tag_list: [])
   end
-  end
+end
