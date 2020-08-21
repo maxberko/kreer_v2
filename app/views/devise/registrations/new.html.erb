@@ -13,21 +13,17 @@
           <div>
             <br>
           </div>
-          <%= f.label :email %>
+          <!-- <%= f.label :email %> -->
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Email" %>
 
-
-          <%= f.label :'First Name' %>
+          
+          <!-- <%= f.label :'First Name' %> -->
           <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "First Name"  %>
 
-
-          <%= f.label :'Last Name' %>
+          <!-- <%= f.label :'Last Name' %> -->
           <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" , placeholder: "Last Name" %>
 
-
-
-
-          <%= f.label :'Password' %>
+          <!-- <%= f.label :'Password' %> -->
           <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
           <%= f.password_field :password, autocomplete: "new-password", class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Password"  %>
           <% if @minimum_password_length %>
