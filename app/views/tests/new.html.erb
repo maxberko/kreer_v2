@@ -45,9 +45,9 @@
       <!-- Question selection tags -->
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
           <div class="flex flex-wrap -m-2">
+            <label class="text-gray-900 text-lg mb-1 font-medium title-font">Select your question tags </label>
             <div class="p-2 w-full">
-              <label class="text-gray-900 text-lg mb-1 font-medium title-font">Select your question tags </label>
-                  <%= f.input :tag_list, label: false, legend: false, as: :check_boxes, collection: Question::CATEGORIES %>
+                  <%= f.input :tag_list, label: false, as: :check_boxes, collection: Question::CATEGORIES %>
                 </div>
             </div>
 
