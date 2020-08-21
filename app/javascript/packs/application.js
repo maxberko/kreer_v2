@@ -26,9 +26,9 @@ require("channels")
 import "../stylesheets/application.scss";
 
 // Internal imports, e.g:
+import { formDisplay } from "../components/form-display.js";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  formDisplay();
 });
