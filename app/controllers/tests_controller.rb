@@ -21,6 +21,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
+    @test.tag_list = params[:test][:tag_list].keys
     @test.user = current_user
     if @test.save
       redirect_to test_path(@test)
@@ -32,6 +33,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype, tag_list: [])
+    params.require(:test).permit(:name, :jobtype)
   end
 end
