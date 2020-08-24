@@ -8,13 +8,15 @@ class Test < ApplicationRecord
   validates :name, presence: true
   validates :jobtype, inclusion: { in: Test::JOBTYPES }
 
-  after_save :generate_tests_questions
+  after_create :generate_tests_questions
 
   private
 
   def generate_tests_questions
     self.tag_list.each do |tag|
-      Question.where(tag: tag).sample(3).each do |question|
+      possible_questions = Question.where(tag: tag)
+      sampled_questions = possible_questions.sample(2)
+      sampled_questions.each do |question|
         TestQuestion.create(
           test: self,
           question: question

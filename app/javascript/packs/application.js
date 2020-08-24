@@ -27,8 +27,15 @@ import "../stylesheets/application.scss";
 
 // Internal imports, e.g:
 import { formDisplay } from "../components/form-display.js";
+import { jsCheckboxes } from "../components/category-choice.js";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  formDisplay();
+  if (document.querySelector('#first-btn')) {
+    formDisplay();
+  }
+  if (document.querySelector('.category-choice')) {
+  jsCheckboxes();
+  }
 });
+
