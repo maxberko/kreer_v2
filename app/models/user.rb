@@ -10,4 +10,11 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one_attached :photo
+
+    include PgSearch::Model
+  pg_search_scope :search_by_last_name_and_first_name_and_email,
+    against: [ :last_name, :first_name, :email ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
