@@ -42,7 +42,7 @@
             <div class="category-choices w-full">
               <% Question::CATEGORIES.each do |category, value| %>
                 <input class="hidden" type="checkbox" name="test[tag_list][<%= category %>]" id="test_category_<%= category %>">
-                <div class="category-choice" data-for="test_category_<%= category %>">
+                <div class="category-choice mb-2" data-for="test_category_<%= category %>">
                   <p><%= value %></p>
                   <i class="fa fa-check"></i>
                 </div>

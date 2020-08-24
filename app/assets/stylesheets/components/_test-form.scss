@@ -33,8 +33,15 @@ input.form-control, select.form-control {
     cursor: pointer;
   }
   &.active {
-  background: #805ad5;
-  color: white;
-  opacity: 1;
+    background: #9f7aea;
+    color: white;
+    opacity: 1;
+    i {
+      opacity: 1;
+    }
+
+  }
+  i {
+    opacity: 0;
   }
 }

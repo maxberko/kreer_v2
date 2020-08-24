@@ -7,7 +7,7 @@ class Question < ApplicationRecord
   CATEGORIES = {  pricing: "Pricing",
                   product_execution: "Product Execution",
                   strategy: "Strategy",
-                  product_sense: "ProductSense",
+                  product_sense: "Product Sense",
                   market_research: "Market Research",
                   product_design: "Product Design" }
 end
