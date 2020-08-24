@@ -4,7 +4,7 @@ class Test < ApplicationRecord
   has_many :questions, through: :test_questions
   acts_as_taggable_on :tags
 
-  JOBTYPES = ['Product Owner', 'Junior Product Manager', 'Senior Product Manager', 'Lead Product Manager', 'CTO']
+  JOBTYPES = ['Product Manager', 'Associate Product Manager', 'Product Owner', 'Junior Product Manager', 'Senior Product Manager', 'Lead Product Manager', 'CTO']
   validates :name, presence: true
   validates :jobtype, inclusion: { in: Test::JOBTYPES }
 
@@ -19,7 +19,7 @@ class Test < ApplicationRecord
   private
 
   def generate_tests_questions
-    self.tag_list.each do |tag|
+    tag_list.each do |tag|
       Question.where(tag: tag).sample(3).each do |question|
         TestQuestion.create(
           test: self,
