@@ -82,7 +82,7 @@ test1 = Test.new(
   name: "Apple",
   date: Date.today,
   jobtype: "Product Owner",
-  user: user2
+  user: user2,
   tag_list: ["Pricing"]
 )
 
