@@ -3,6 +3,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
 
   resources :tests, only: %i[index show create new]
-
   devise_for :users
 end
