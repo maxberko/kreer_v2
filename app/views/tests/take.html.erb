@@ -1,7 +1,30 @@
-<p><%= @test.name %></p>
+
+<!-- ---------------- -->
+<h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20"><strong> <%= @test.name %> </strong></h1>
+<section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap">
+    <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Congratulations, here is your new recruitment campaign ! </h2>
+    <div class="md:w-3/5 md:pl-6">
+      <p class="leading-relaxed text-base"> Your profile is really interesting and human ressources in charge of your recruitment would like to know a little bit more about you.<br> Let's start with the quick test ! (few minutes only)</p>
+      <div class="flex md:mt-4 mt-6">
+        <button class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Start</button>
+        <!-- <p>cliquer sur le bouton crée une instance de User.test </p> -->
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ----------- -->
+
+
+
+<p>card</p>
 <% @questions.each do |question| %>
     <p><%= question.description %></p>
         <% question.answers.each do |answer| %>
         <p><%= answer.description %></p>
         <% end %>
+      <p>submit</p>
 <% end %>
+
+
