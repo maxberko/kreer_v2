@@ -1,3 +1,12 @@
+<%= form_tag test_path(@test), method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a candidate"
+  %>
+  <%= submit_tag "Search", class: "flex mx-auto text-white bg-teal-500 border-0 py-2 px-20 my-8 focus:outline-none hover:bg-teal-500 rounded text-lg" %>
+<% end %>
+
 <section class="text-gray-700 body-font">
   <div class=" px-5 py-24 mx-auto">
     <div class="m-4">
