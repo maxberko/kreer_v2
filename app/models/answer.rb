@@ -3,5 +3,5 @@ class Answer < ApplicationRecord
   has_many :inputs
 
   validates :description, presence: true
-  validates :correct, presence: true
+  validates_inclusion_of :correct, in: [true, false]
 end
