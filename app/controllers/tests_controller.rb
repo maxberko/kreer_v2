@@ -5,8 +5,12 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
+  def take
+    @test = Test.find(params[:test_id])
+    @questions = @test.questions
+  end
+
   def show
-    # todo
     @test = Test.find(params[:id])
     @questions = @test.questions
   end

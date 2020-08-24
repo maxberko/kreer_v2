@@ -1,0 +1,7 @@
+<p><%= @test.name %></p>
+<% @questions.each do |question| %>
+    <p><%= question.description %></p>
+        <% question.answers.each do |answer| %>
+        <p><%= answer.description %></p>
+        <% end %>
+<% end %>
