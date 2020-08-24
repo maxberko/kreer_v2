@@ -6,9 +6,9 @@ class TestsController < ApplicationController
   end
 
   def show
-    # todo
     @test = Test.find(params[:id])
     @questions = @test.questions
+    @candidates = @test.candidates
   end
 
   def new
