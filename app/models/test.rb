@@ -11,9 +11,8 @@ class Test < ApplicationRecord
   after_save :generate_tests_questions
 
   def candidates
-    self.test_questions.first.inputs.map do |input|
-      input.user
-    end
+    users = self.test_questions.first.inputs.map(&:user)
+    User.where(id:users)
   end
 
   private
