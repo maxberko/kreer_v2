@@ -1,5 +1,5 @@
 const scrollTest = () => {
-  const next_buttons = document.querySelectorAll(".n");
+  const next_buttons = document.querySelectorAll('.button-next');
   // const show_next_question = document.querySelector("#q2");
 
   next_buttons.forEach((next_button) => {
@@ -10,3 +10,4 @@ const scrollTest = () => {
 }
 
 export { scrollTest };
+
