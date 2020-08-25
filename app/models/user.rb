@@ -15,5 +15,13 @@ class User < ApplicationRecord
     #returns a percentage
   end
 
+  def completion_for_test(test)
+    #return a percentage
+  end
+
+  def results_per_tag(test)
+    #returns a hash : keys are tags and values are percentage of success
+  end
+
   
 end
