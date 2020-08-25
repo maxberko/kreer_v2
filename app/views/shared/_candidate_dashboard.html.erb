@@ -1,6 +1,5 @@
 <section class="text-gray-700 body-font">
-<%= @tests_as_candidate.current_user %>
-  <% if @tests.count == 0 %>
+  <% if current_user.tests_as_candidate == [] %>
     <div>
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto">
@@ -18,7 +17,6 @@
         </div>
       </section>
 
-<%= %>
     </div>
 
   <% else %>

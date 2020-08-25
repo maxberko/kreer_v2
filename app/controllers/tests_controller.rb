@@ -8,6 +8,7 @@ class TestsController < ApplicationController
   def take
     @test = Test.find(params[:test_id])
     @questions = @test.questions
+    @input = Input.new
   end
 
   def show
