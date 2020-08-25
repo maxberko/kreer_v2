@@ -24,7 +24,7 @@ class TestsController < ApplicationController
     @test.tag_list = params[:test][:tag_list].keys
     @test.user = current_user
     if @test.save
-      redirect_to test_path(@test)
+      redirect_to test_path(@test), notice: 'Your test has been successfully generated!'
     else
       render :new
     end
