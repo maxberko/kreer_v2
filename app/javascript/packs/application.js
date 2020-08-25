@@ -27,6 +27,7 @@ import "../stylesheets/application.scss";
 
 // Internal imports, e.g:
 import { formDisplay } from "../components/form-display.js";
+import { startTest } from "../components/start-test.js";
 import { jsCheckboxes } from "../components/category-choice.js";
 // import { initSelect2 } from '../components/init_select2';
 
@@ -37,5 +38,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('.category-choice')) {
   jsCheckboxes();
   }
+  startTest();
 });
 

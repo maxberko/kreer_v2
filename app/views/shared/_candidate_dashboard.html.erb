@@ -1,49 +1,48 @@
-<h1>This is candidate Dashboard</h1>
-
-
 <section class="text-gray-700 body-font">
 
+  <!--  display message if no campaign -->
   <% if @tests.count == 0 %>
-    <div>
+
       <section class="text-gray-700 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
             <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Welcome on <strong>K-reer </strong>!</h2>
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Here is your Candidate dashboard</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In this place you will have access to all of your tests.<br> Unfortunately you have not been invitated yet to join a new recruitment campaign.</p> <br> <p>Apply to your favorite companies and they will share with you a K-reer link for a new test.</p>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In this place you will have access to all of your tests.<br> Unfortunately you have not been invitated yet to join a new recruitment campaign.</p> <br> <p>Apply to your favorite companies and recruiters will share with you a K-reer link for a new test.</p>
           </div>
-          <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <!--   <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
             <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Train by answering some questions in order to be the best when you will receive a test </h1>
             <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"><%= link_to 'Training', new_test_path %></button>
-          </div>
+          </div> -->
         <div class="container px-5 py-24 mx-auto">
         </div>
         </div>
       </section>
 
-<%= %>
-    </div>
-
   <% else %>
-
+ <!--  display campaign results  -->
+<h2>Pending tests</h2>
     <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-indigo-500">Welcome to your <strong>K-reer </strong> dashboard!</h1>
+      </div>
+
+      <!--  campaign.each do -->
       <div class="flex flex-wrap -m-4">
-        <!--  campaign.each do |campaign|  -->
       <% @tests.each do| test|  %>
         <div class="p-4 md:w-1/3">
-          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
-            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80/720x400" alt="blog">
+          <div class="h-full shadow-lg border-2 border-indigo-500 rounded-lg overflow-hidden">
+            <!-- <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80/720x400" alt="blog"> -->
             <div class="p-6">
-              <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1"><%= test.name %> </h2>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3"><%= test.date %> </h1>
-              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Results
+              <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-500 mb-1 text-center"><%= test.name %> </h2>
+              <h1 class="title-font text-lg font-medium text-gray-500 mb-3 text-center"><%= test.created_at.strftime('%d/%m/%Y')%> </h1>
+              <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><%= link_to 'Results', "#" %></a>
                   <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
               </a>
               <div class="flex items-center flex-wrap ">
-
                 <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Share link
                   <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14"></path>
@@ -66,12 +65,7 @@
           </div>
         </div>
       <% end %>
+<h2>Pasts tests</h2>
       </div>
     </div>
-  <% end %>
 </section>
-
-<h2>Pending tests</h2>
-`
-
-<h2>Pasts tests</h2>
