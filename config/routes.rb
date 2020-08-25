@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     get 'user/:user_id/result', to: 'tests#result', as: :candidate_result
     resources :inputs, only: %i[create]
-
+  end
   post '/test_questions/:id/inputs', to: "inputs#create", as: :test_question_inputs
 
   devise_for :users
