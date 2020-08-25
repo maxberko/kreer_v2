@@ -1,0 +1,21 @@
+<% @candidates.each do |candidate|%>
+  <section class="text-gray-700 body-font">
+    <div class=" px-5 py-24 mx-auto">
+      <div class="m-4">
+        <div class=" mb-6 p-4 flex flex-row items-center w-3/4 shadow-2xl rounded-lg mx-auto justify-between">
+          <div class="flex flex-row items-center">
+            <%= cl_image_tag("man-303792_1280_me24rf.png",
+            width: 180, height: 180, crop: :fill, :class => "object-cover object-center rounded-full m-4 border-2 border-gray-200 bg-gray-100") %>
+            <p class="p-4">
+              <%= candidate.first_name %> </br>
+              <%= candidate.last_name %> </br>
+              <%= candidate.email %> </p> </br>
+            </p>
+            </p>
+          </div>
+          <button class="text-white bg-teal-500 shadow-lg border-0  px-8 focus:outline-none hover:bg-teal-600 rounded"><%= link_to "See results", "/ruby-book" %></button>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end  %>

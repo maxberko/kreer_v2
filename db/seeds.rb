@@ -82,10 +82,10 @@ test1 = Test.new(
   name: "Apple",
   date: Date.today,
   jobtype: "Product Owner",
-  user: user2,
-  tag_list: ["pricing"]
+  user: user2
 )
 
 test1.tag_list.add("pricing")
+test1.save
 
 puts "#{Test.count} test created"
