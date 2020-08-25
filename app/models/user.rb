@@ -19,12 +19,18 @@ class User < ApplicationRecord
                   }
 
   def result_for_test(test)
-    # Récupérer une instance de l'utilisateur actuel
-    # @user = Test.candidates # à finir?
-    # Récupérer les inputs de l'utilisateur pour le test actuel
-    # @inputs = @user.inputs.where(test_question_id.test_id:(params()))
-    # Récupérer les entrées de
-    # returns a percentage
+    inputs = []
+    test_questions = test.test_questions
+    test_questions.each do |tq|
+      inputs << tq.inputs.where(user: self)
+    end
+    inputs.flatten!
+    answers = inputs.map(&:answer)
+    correct_answers = 0
+    answers.each do |answer|
+      correct_answers += 1 if answer.correct
+    end
+    ((correct_answers / test_questions.length) * 100).truncate
   end
 
   # me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
