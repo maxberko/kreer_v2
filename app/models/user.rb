@@ -10,4 +10,10 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one_attached :photo
+
+  def result_for_test(test)
+    #returns a percentage
+  end
+
+  
 end

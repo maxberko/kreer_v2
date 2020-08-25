@@ -11,8 +11,8 @@ class TestsController < ApplicationController
   end
 
   def result
+    @candidate = User.find(params[:user_id])
     @test = Test.find(params[:test_id])
-    @questions = @test.questions
   end
 
   def show
