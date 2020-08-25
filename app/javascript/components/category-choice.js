@@ -8,7 +8,6 @@ const jsCheckboxes = () => {
       if (hiddenCheckbox.checked) {
           hiddenCheckbox.checked = false;
       } else {
-        console.log("test");
         hiddenCheckbox.checked = true;
       };
     });

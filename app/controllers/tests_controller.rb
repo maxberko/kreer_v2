@@ -7,7 +7,10 @@ class TestsController < ApplicationController
 
   def take
     @test = Test.find(params[:test_id])
-    @questions = @test.questions
+    @questions = @test.questions.reject do |question|
+      Input.find_by(user: current_user, test_question: TestQuestion.find_by(question: question, test: @test))
+    end # pas encore répondu
+    @input = Input.new
   end
 
   def result
