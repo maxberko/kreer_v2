@@ -18,9 +18,9 @@ class User < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 
-  def result_for_test(_test)
+  def result_for_test(test)
     # Récupérer une instance de l'utilisateur actuel
-    # @user = User.find(params(:user_id)) # à finir?
+    # @user = Test.candidates # à finir?
     # Récupérer les inputs de l'utilisateur pour le test actuel
     # @inputs = @user.inputs.where(test_question_id.test_id:(params()))
     # Récupérer les entrées de

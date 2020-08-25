@@ -4,13 +4,11 @@ Rails.application.routes.draw do
 
   resources :tests, only: %i[index show create new] do
     get '/take', to: 'tests#take'
-
     get 'user/:user_id/result', to: 'tests#result', as: :candidate_result
     resources :inputs, only: %i[create]
   end
-  post '/test_questions/:id/inputs', to: "inputs#create", as: :test_question_inputs
 
   devise_for :users
-
+  post '/test_questions/:id/inputs', to: "inputs#create", as: :test_question_inputs
   get '/contact', to: 'pages#contact'
 end
