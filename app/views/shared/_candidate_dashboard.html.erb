@@ -2,26 +2,7 @@
 
 
   <!--  display message if no campaign -->
-  <% if @tests.count == 0 %>
 
-      <section class="text-gray-700 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-20">
-            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Welcome on <strong>K-reer </strong>!</h2>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Here is your Candidate dashboard</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">In this place you will have access to all of your tests.<br> Unfortunately you have not been invitated yet to join a new recruitment campaign.</p> <br> <p>Apply to your favorite companies and recruiters will share with you a K-reer link for a new test.</p>
-          </div>
-        <!--   <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Train by answering some questions in order to be the best when you will receive a test </h1>
-            <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"><%= link_to 'Training', new_test_path %></button>
-          </div> -->
-        <div class="container px-5 py-24 mx-auto">
-        </div>
-        </div>
-      </section>
-
-
-  <% else %>
  <!--  display campaign results  -->
 <h2>Pending tests</h2>
     <div class="container px-5 py-24 mx-auto">
