@@ -1,13 +1,27 @@
+
 <section class="header text-white body-font">
 <div class="flex flex-row items-center mx-24">
   <button class=" arrowsize inline-flex text-white bg-purple-500 pb-3 border-0 focus:outline-none hover:text-teal-600 "><%= link_to " ←", "/dashboard" %></button>
   <button class="inline-flex text-white bg-purple-500  border-0 py-5 px-8 focus:outline-none hover:text-teal-600 text-2xl"><%= link_to " My Campaigns", "/dashboard" %></button>
 </div>
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-10">
-      <h1 class="sm:text-5xl text-2xl font-medium title-font text-black-500 mb-4">SEARCH CANDIDATE RESULTS</h1>
-    </div>
+<div class="clipboard  text-black">
+<!-- Target -->
+<i class="far fa-copy bg-white p-2 clipper "></i>
+<input id="foo" value="<%= test_take_url(@test) %>">
+
+<!-- Trigger -->
+<button class="clipboardbtn" data-clipboard-target="#foo">
+
+    <i class="text-white bg-teal-500 shadow-lg border-0  p-2 px-10  focus:outline-none hover:bg-teal-600 rounded ">Copy</i>
+</button>
+</div>
+<p>Share this link on a job offer or send it to candidates</p>
+
+<div class="container px-5 py-24 mx-auto">
+  <div class="text-center mb-10">
+    <h1 class="sm:text-5xl text-2xl font-medium title-font text-black-500 mb-4">SEARCH CANDIDATE RESULTS</h1>
   </div>
+</div>
     <%= render "shared/search_bar" %>
     <!--Waves Container-->
     <%= render "shared/waves" %>
@@ -17,4 +31,3 @@
 <div class="-mt-5">
 <%= render "shared/card_candidates" %>
 </div>
-
