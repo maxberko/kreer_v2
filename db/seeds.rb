@@ -189,7 +189,6 @@ test4.save
 test5.tag_list.add("mobile", "maths", "technical")
 test5.save
 
-
 puts "#{Test.count} tests created"
 
 input1 = Input.new(user: User.last, test_question: Test.last.test_questions.last, answer: Test.last.test_questions[0].question.answers.last)

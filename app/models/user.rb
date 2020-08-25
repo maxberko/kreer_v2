@@ -11,6 +11,15 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+
+  include PgSearch::Model
+  pg_search_scope :search_by_last_name_and_first_name_and_email,
+    against: [ :last_name, :first_name, :email ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  conflictdef result_for_test(test)
+
 # me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
   def tests_as_candidate
     self.inputs.map(&:test_question).map(&:test).uniq

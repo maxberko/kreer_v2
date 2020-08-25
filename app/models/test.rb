@@ -11,7 +11,8 @@ class Test < ApplicationRecord
   after_create :generate_tests_questions
 
   def candidates
-    # @test.candidates -> tableau de users pour un test
+    users = self.test_questions.first.inputs.map(&:user)
+    User.where(id:users)
   end
 
   def results_per_tags

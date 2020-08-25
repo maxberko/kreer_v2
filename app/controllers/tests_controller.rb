@@ -22,6 +22,17 @@ class TestsController < ApplicationController
   def show
     @test = Test.find(params[:id])
     @questions = @test.questions
+    @candidates = @test.candidates
+    if params[:query].present?
+      sql_query =  " \
+        users.email ILIKE :query \
+        OR users.last_name ILIKE :query \
+        OR users.first_name ILIKE :query \
+      "
+      @candidates = @test.candidates.where(sql_query, query: "%#{params[:query]}%")
+    else
+    @candidates = User.all
+    end
   end
 
   def new
