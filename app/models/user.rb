@@ -11,31 +11,25 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-
   include PgSearch::Model
   pg_search_scope :search_by_last_name_and_first_name_and_email,
-    against: [ :last_name, :first_name, :email ],
-    using: {
-      tsearch: { prefix: true }
-    }
-  conflictdef result_for_test(test)
+                  against: %i[last_name first_name email],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
-# me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
-  def tests_as_candidate
-    self.inputs.map(&:test_question).map(&:test).uniq
+  def result_for_test(_test)
+    # Récupérer une instance de l'utilisateur actuel
+    # @user = User.find(params(:user_id)) # à finir?
+    # Récupérer les inputs de l'utilisateur pour le test actuel
+    # @inputs = @user.inputs.where(test_question_id.test_id:(params()))
+    # Récupérer les entrées de
+    # returns a percentage
   end
 
-
-#def result_for_test(test)
-# end
-
-
-# rdef result_per_test_tag(test, tag)
-# end
-
-
-  def result_for_test(test)
-    # returns a percentage
+  # me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
+  def tests_as_candidate
+    inputs.map(&:test_question).map(&:test).uniq
   end
 
   def completion_for_test(test)
@@ -45,5 +39,4 @@ class User < ApplicationRecord
   def results_per_tag(test)
     # returns a hash : keys are tags and values are percentage of success
   end
-
 end
