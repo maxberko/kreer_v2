@@ -187,4 +187,6 @@ test1 = Test.new(
 
 test1.tag_list.add("pricing")
 
+test1.save
+
 puts "#{Test.count} test created"
