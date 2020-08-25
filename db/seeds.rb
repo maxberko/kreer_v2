@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Input.destroy_all
 TestQuestion.destroy_all
 Answer.destroy_all
 Question.destroy_all
@@ -196,4 +197,21 @@ test5.tag_list.add("mobile", "maths", "technical")
 test5.save
 
 
-puts "#{Test.count} test created"
+puts "#{Test.count} tests created"
+
+input1 = Input.new(user: User.last, test_question: Test.last.test_questions.last, answer: Test.last.test_questions[0].question.answers.last)
+input1.save
+
+input2 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[1].question.answers.last)
+input2.save
+
+input3 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[2].question.answers.last)
+input3.save
+
+input3 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[3].question.answers.last)
+input3.save
+
+input4 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[3].question.answers.last)
+input4.save
+
+puts "#{Input.count} inputs created"
