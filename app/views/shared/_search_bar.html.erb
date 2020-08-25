@@ -1,7 +1,8 @@
+<div class="flex flex-row items-center justify-center">
 <%= form_tag test_path(@test), method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "flex-row block mx-auto bg-white rounded border border-gray-400 focus:outline-none shadow-lg focus:border-purple-500 text-base px-4 py-2 mb-4",
+    class: "flex mx-auto bg-white rounded border border-gray-400 focus:outline-none shadow-lg focus:border-purple-500 text-base p-20 py-2 ",
     placeholder: "Find a candidate : Name, Last Name and email"%>
-  <%= submit_tag "Search", class: " flex mx-auto text-white bg-teal-500 shadow-lg border-0 py-2 px-20 my-8 focus:outline-none hover:bg-teal-600 rounded text-lg" %>
 <% end %>
+</div>
