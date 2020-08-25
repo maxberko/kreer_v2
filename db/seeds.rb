@@ -72,6 +72,12 @@ answer2 = Answer.create!(
 
 answer3 = Answer.create!(
   description: "This is the wrong answer !",
+  correct: false,
+  question: question1
+)
+
+answer4 = Answer.create!(
+  description: "This is the good answer !",
   correct: true,
   question: question1
 )
@@ -82,14 +88,10 @@ test1 = Test.new(
   name: "Apple",
   date: Date.today,
   jobtype: "Product Owner",
-  user: user2,
-<<<<<<< HEAD
-  tag_list: ["Pricing"]
-=======
-  tag_list: ["pricing"]
->>>>>>> 55360773fa863a4b7832ef0a2a46423d32bb6c50
+  user: user2
 )
 
 test1.tag_list.add("pricing")
+test1.save
 
 puts "#{Test.count} test created"

@@ -10,4 +10,19 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one_attached :photo
+
+# me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
+  def tests_as_candidate
+    self.inputs.map(&:test_question).map(&:test).uniq
+  end
+
+
+#def result_for_test(test)
+# end
+
+
+# rdef result_per_test_tag(test, tag)
+# end
+
+
 end

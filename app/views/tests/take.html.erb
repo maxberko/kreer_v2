@@ -18,14 +18,17 @@
 
 
 <div id="show_questions" style="display: none">
-  <p>card</p>
   <% @questions.each do |question| %>
+  <div id='show_question_#{<% question.id %>}'></div>
       <p><%= question.description %></p>
           <% question.answers.each do |answer| %>
           <p><%= answer.description %></p>
           <% end %>
-        <p>submit</p>
   <% end %>
+  <div>
+    <button id="next_question" class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Next</button>
+    <button id="next_question" class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Previous</button>
+  </div>
 </div>
 
 
