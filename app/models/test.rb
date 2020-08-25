@@ -4,7 +4,7 @@ class Test < ApplicationRecord
   has_many :questions, through: :test_questions
   acts_as_taggable_on :tags
 
-  JOBTYPES = ['Product Manager', 'Product Manager Associate', 'Product Owner', 'Junior Product Manager', 'Senior Product Manager', 'Lead Product Manager', 'CTO']
+  JOBTYPES = ['Product Manager', 'Associate Product Manager', 'Product Owner', 'Junior Product Manager', 'Senior Product Manager', 'Lead Product Manager', 'CTO']
   validates :name, presence: true
   validates :jobtype, inclusion: { in: Test::JOBTYPES }
 
