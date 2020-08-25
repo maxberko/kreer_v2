@@ -5,9 +5,9 @@ class Question < ApplicationRecord
   validates :description, presence: true
 
   CATEGORIES = {  pricing: "Pricing",
-                  product_execution: "Product Execution",
-                  strategy: "Strategy",
-                  product_sense: "Product Sense",
+                  product: "Product",
+                  maths: "Maths",
+                  mobile: "Mobile",
                   market_research: "Market Research",
                   product_design: "Product Design" }
 end

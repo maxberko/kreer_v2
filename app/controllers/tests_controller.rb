@@ -13,6 +13,12 @@ class TestsController < ApplicationController
     @input = Input.new
   end
 
+  def result
+    @candidate = User.find(params[:user_id])
+    @test = Test.find(params[:test_id])
+    @candidate_results_for_test = @candidate.result_for_test(@test)
+  end
+
   def show
     @test = Test.find(params[:id])
     @questions = @test.questions
@@ -27,7 +33,7 @@ class TestsController < ApplicationController
     @test.tag_list = params[:test][:tag_list].keys
     @test.user = current_user
     if @test.save
-      redirect_to test_path(@test)
+      redirect_to test_path(@test), notice: 'Your test has been successfully generated!'
     else
       render :new
     end
@@ -36,6 +42,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype)
+    params.require(:test).permit(:name, :jobtype, tag_list: [])
   end
 end

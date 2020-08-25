@@ -12,5 +12,4 @@ class InputsController < ApplicationController
       end
     end
   end
-
 end
