@@ -39,6 +39,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype)
+    params.require(:test).permit(:name, :jobtype, tag_list: [])
   end
 end
