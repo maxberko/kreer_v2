@@ -10,6 +10,11 @@ class TestsController < ApplicationController
     @questions = @test.questions
   end
 
+  def result
+    @test = Test.find(params[:test_id])
+    @questions = @test.questions
+  end
+
   def show
     @test = Test.find(params[:id])
     @questions = @test.questions
