@@ -177,11 +177,23 @@ answer106 = Answer.create(description:"1", correct:false, question: question28)
 
 puts "#{Answer.count} answers created"
 
-test1 = Test.new(name: "Apple", date: Date.today, jobtype: "Product Owner", user: user2)
+test1 = Test.new(name: "Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
+test2 = Test.new(name: "Mobile Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test3 = Test.new(name: "Experienced Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
+test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
 
 
-test1.tag_list.add("mobile", "maths")
+test1.tag_list.add("product", "maths", "technical")
 test1.save
+test2.tag_list.add("mobile", "maths", "technical")
+test2.save
+test3.tag_list.add("product", "maths", "technical")
+test3.save
+test4.tag_list.add("mobile", "maths", "technical")
+test4.save
+test5.tag_list.add("mobile", "maths", "technical")
+test5.save
 
 
 puts "#{Test.count} test created"
