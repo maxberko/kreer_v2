@@ -83,11 +83,7 @@ test1 = Test.new(
   date: Date.today,
   jobtype: "Product Owner",
   user: user2,
-<<<<<<< HEAD
-  tag_list: ["Pricing"]
-=======
   tag_list: ["pricing"]
->>>>>>> 55360773fa863a4b7832ef0a2a46423d32bb6c50
 )
 
 test1.tag_list.add("pricing")
