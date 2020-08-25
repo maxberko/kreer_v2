@@ -11,10 +11,21 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
-    include PgSearch::Model
+  include PgSearch::Model
   pg_search_scope :search_by_last_name_and_first_name_and_email,
     against: [ :last_name, :first_name, :email ],
     using: {
       tsearch: { prefix: true }
     }
+  conflictdef result_for_test(test)
+    # returns a percentage
+  end
+
+  def completion_for_test(test)
+    # return a percentage
+  end
+
+  def results_per_tag(test)
+    # returns a hash : keys are tags and values are percentage of success
+  end
 end

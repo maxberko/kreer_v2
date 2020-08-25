@@ -15,10 +15,14 @@ class Test < ApplicationRecord
     User.where(id:users)
   end
 
+  def results_per_tags
+    # returns a hash with keys as tags and values as success rate for all users
+  end
+
   private
 
   def generate_tests_questions
-    self.tag_list.each do |tag|
+    tag_list.each do |tag|
       possible_questions = Question.where(tag: tag)
       sampled_questions = possible_questions.sample(2)
       sampled_questions.each do |question|

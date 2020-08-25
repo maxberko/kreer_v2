@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :tests, only: %i[index show create new] do
     get '/take', to: 'tests#take'
+    get 'user/:user_id/result', to: 'tests#result', as: :candidate_result
     resources :inputs, only: %i[create]
   end
 

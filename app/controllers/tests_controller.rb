@@ -10,6 +10,12 @@ class TestsController < ApplicationController
     @questions = @test.questions
   end
 
+  def result
+    @candidate = User.find(params[:user_id])
+    @test = Test.find(params[:test_id])
+    @candidate_results_for_test = @candidate.result_for_test(@test)
+  end
+
   def show
     @test = Test.find(params[:id])
     @questions = @test.questions
@@ -44,6 +50,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype)
+    params.require(:test).permit(:name, :jobtype, tag_list: [])
   end
 end
