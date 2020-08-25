@@ -31,7 +31,7 @@ class TestsController < ApplicationController
       "
       @candidates = @test.candidates.where(sql_query, query: "%#{params[:query]}%")
     else
-    @candidates = @test.candidates
+    @candidates = User.all
     end
   end
 
