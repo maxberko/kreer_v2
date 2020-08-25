@@ -37,34 +37,34 @@ user3 = User.create!(
 
 puts "#{User.count} users created"
 
-question1 = Question.create!(tag:"PRODUCT", description:"What best defines the role of a PM?")
-question2 = Question.create!(tag:"PRODUCT", description:"With whom does the Product Manager interact the most daily?")
-question3 = Question.create!(tag:"PRODUCT", description:"Which one of these quality is the least important for being a good PM? Is it being?...")
-question4 = Question.create!(tag:"PRODUCT", description:"When building a payment page with different payment options, which module would you NOT use to ask the user to pick a specific payment method?")
-question5 = Question.create!(tag:"PRODUCT", description:"What are the two things you do first when building a new feature?")
-question6 = Question.create!(tag:"PRODUCT", description:"What is usually the main purpose of an MVP?")
-question7 = Question.create!(tag:"PRODUCT", description:"In the following list, which are the 3 true C2C marketplaces?")
-question8 = Question.create!(tag:"MOBILE", description:"Compared to native apps, what do you think applies best to HTML5 apps:")
-question9 = Question.create!(tag:"PRODUCT", description:"Which of these terms is not related to Agile methodologies")
-question10 = Question.create!(tag:"TECHNICAL", description:"PHP is a coding language that is:")
-question11 = Question.create!(tag:"TECHNICAL", description:"Which of these languages is typically used for the structure of a web page?")
-question12 = Question.create!(tag:"TECHNICAL", description:"Which of these languages is typically used for the interactions within a page of a website ?")
-question13 = Question.create!(tag:"TECHNICAL", description:"Which of these languages is typically used for the look and style of a page?")
-question14 = Question.create!(tag:"TECHNICAL", description:"What system helps reducing the loading time of a page?")
-question15 = Question.create!(tag:"TECHNICAL", description:"What is a 'token'?")
-question16 = Question.create!(tag:"TECHNICAL", description:"Which of these concepts is NOT specific to Object Oriented programming?")
-question17 = Question.create!(tag:"TECHNICAL", description:"What is MySQL?")
-question18 = Question.create!(tag:"MOBILE", description:"Which support is the best choice for having developers available ?")
-question19 = Question.create!(tag:"MOBILE", description:"Which support is the best choice for iterating quickly?")
-question20 = Question.create!(tag:"MOBILE", description:"Which support is the best choice for maximizing margin during online payment ?")
-question21 = Question.create!(tag:"MOBILE", description:"Which support is the best choice for sending notifications ?")
-question22 = Question.create!(tag:"MOBILE", description:"Which support is the best choice for accessing content while offline ?")
-question23 = Question.create!(tag:"MOBILE", description:"For a product like BlaBlaCar, if you already have an app for iOS and Android smartphones, what other mobile platform do you target first ?")
-question24 = Question.create!(tag:"MATHS", description:"Let's say your target market is 1M users and you currently have 100k users. With a month-over-month growth of 100%, how many months are necessary until you reach the total market ?")
-question25 = Question.create!(tag:"MATHS", description:"Consider a sink containing exactly 12 liters of water. If water is drained from the sink until it holds exactly 6 liters of water less than the quantity drained away, how many liters of water were drained away ?")
-question26 = Question.create!(tag:"MATHS", description:"A coin has two sides. One side has the number 1 on it and the other side has the number 2 on it. If the coin is flipped three times what is the probability that the sum of the numbers on the landing side of the coin will be strictly greater than 4 ?")
-question27 = Question.create!(tag:"MATHS", description:"We are conducting an A/B test on the home page. Each page has 1/2 chance to be displayed. A user sees three times the home page, what is the probability that he sees only page A ?")
-question28 = Question.create!(tag:"MATHS", description:"An advertising campaign goes as follows:- It's a banner of 300*150 px on a Travel Website.- It lasts 4 weeks for a total budget of 20 000€.- your CPM is 20€.- the CTR is 1%.- the conversion rate is 10%.NB: CPM = Cost for every 1000 impressions of the banner CTR = clic through rate on that banner. What is the cost per conversion?")
+question1 = Question.create!(tag:"product", description:"What best defines the role of a PM?")
+question2 = Question.create!(tag:"product", description:"With whom does the product Manager interact the most daily?")
+question3 = Question.create!(tag:"product", description:"Which one of these quality is the least important for being a good PM? Is it being?...")
+question4 = Question.create!(tag:"product", description:"When building a payment page with different payment options, which module would you NOT use to ask the user to pick a specific payment method?")
+question5 = Question.create!(tag:"product", description:"What are the two things you do first when building a new feature?")
+question6 = Question.create!(tag:"product", description:"What is usually the main purpose of an MVP?")
+question7 = Question.create!(tag:"product", description:"In the following list, which are the 3 true C2C marketplaces?")
+question8 = Question.create!(tag:"mobile", description:"Compared to native apps, what do you think applies best to HTML5 apps:")
+question9 = Question.create!(tag:"product", description:"Which of these terms is not related to Agile methodologies")
+question10 = Question.create!(tag:"technical", description:"PHP is a coding language that is:")
+question11 = Question.create!(tag:"technical", description:"Which of these languages is typically used for the structure of a web page?")
+question12 = Question.create!(tag:"technical", description:"Which of these languages is typically used for the interactions within a page of a website ?")
+question13 = Question.create!(tag:"technical", description:"Which of these languages is typically used for the look and style of a page?")
+question14 = Question.create!(tag:"technical", description:"What system helps reducing the loading time of a page?")
+question15 = Question.create!(tag:"technical", description:"What is a 'token'?")
+question16 = Question.create!(tag:"technical", description:"Which of these concepts is NOT specific to Object Oriented programming?")
+question17 = Question.create!(tag:"technical", description:"What is MySQL?")
+question18 = Question.create!(tag:"mobile", description:"Which support is the best choice for having developers available ?")
+question19 = Question.create!(tag:"mobile", description:"Which support is the best choice for iterating quickly?")
+question20 = Question.create!(tag:"mobile", description:"Which support is the best choice for maximizing margin during online payment ?")
+question21 = Question.create!(tag:"mobile", description:"Which support is the best choice for sending notifications ?")
+question22 = Question.create!(tag:"mobile", description:"Which support is the best choice for accessing content while offline ?")
+question23 = Question.create!(tag:"mobile", description:"For a product like BlaBlaCar, if you already have an app for iOS and Android smartphones, what other mobile platform do you target first ?")
+question24 = Question.create!(tag:"maths", description:"Let's say your target market is 1M users and you currently have 100k users. With a month-over-month growth of 100%, how many months are necessary until you reach the total market ?")
+question25 = Question.create!(tag:"maths", description:"Consider a sink containing exactly 12 liters of water. If water is drained from the sink until it holds exactly 6 liters of water less than the quantity drained away, how many liters of water were drained away ?")
+question26 = Question.create!(tag:"maths", description:"A coin has two sides. One side has the number 1 on it and the other side has the number 2 on it. If the coin is flipped three times what is the probability that the sum of the numbers on the landing side of the coin will be strictly greater than 4 ?")
+question27 = Question.create!(tag:"maths", description:"We are conducting an A/B test on the home page. Each page has 1/2 chance to be displayed. A user sees three times the home page, what is the probability that he sees only page A ?")
+question28 = Question.create!(tag:"maths", description:"An advertising campaign goes as follows:- It's a banner of 300*150 px on a Travel Website.- It lasts 4 weeks for a total budget of 20 000€.- your CPM is 20€.- the CTR is 1%.- the conversion rate is 10%.NB: CPM = Cost for every 1000 impressions of the banner CTR = clic through rate on that banner. What is the cost per conversion?")
 puts "#{Question.count} questions created"
 
 
@@ -177,14 +177,23 @@ answer106 = Answer.create(description:"1", correct:false, question: question28)
 
 puts "#{Answer.count} answers created"
 
-test1 = Test.new(
-  name: "Apple",
-  date: Date.today,
-  jobtype: "Product Owner",
-  user: user2,
-  tag_list: ["pricing"]
-)
+test1 = Test.new(name: "Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
+test2 = Test.new(name: "Mobile Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test3 = Test.new(name: "Experienced Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
+test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
 
-test1.tag_list.add("pricing")
+
+test1.tag_list.add("product", "maths", "technical")
+test1.save
+test2.tag_list.add("mobile", "maths", "technical")
+test2.save
+test3.tag_list.add("product", "maths", "technical")
+test3.save
+test4.tag_list.add("mobile", "maths", "technical")
+test4.save
+test5.tag_list.add("mobile", "maths", "technical")
+test5.save
+
 
 puts "#{Test.count} test created"

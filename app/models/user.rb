@@ -12,16 +12,14 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   def result_for_test(test)
-    #returns a percentage
+    # returns a percentage
   end
 
   def completion_for_test(test)
-    #return a percentage
+    # return a percentage
   end
 
   def results_per_tag(test)
-    #returns a hash : keys are tags and values are percentage of success
+    # returns a hash : keys are tags and values are percentage of success
   end
-
-  
 end
