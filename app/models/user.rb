@@ -11,6 +11,20 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+# me permet de faire user.tests_as_candidate et me sort tous les tests d'un candidat
+  def tests_as_candidate
+    self.inputs.map(&:test_question).map(&:test).uniq
+  end
+
+
+#def result_for_test(test)
+# end
+
+
+# rdef result_per_test_tag(test, tag)
+# end
+
+
   def result_for_test(test)
     # returns a percentage
   end
@@ -22,4 +36,5 @@ class User < ApplicationRecord
   def results_per_tag(test)
     # returns a hash : keys are tags and values are percentage of success
   end
+
 end
