@@ -24,12 +24,12 @@
           <div class="h-full border-2 shadow-lg border-indigo-500 rounded-lg overflow-hidden">
             <!-- <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80/720x400" alt="blog"> -->
             <div class="p-6">
-              <span class="inline-block py-1 px-3 rounded bg-indigo-100 text-indigo-500 text-sm font-medium tracking-widest"><%= test.name %></span>
-              <h2 class="title-font text-lg font-medium text-gray-500 mb-3"><%= test.created_at.strftime('%d/%m/%Y') %></h2>
+              <span class="inline-block py-1 px-3 rounded bg-indigo-100 text-indigo-500 text-lg font-medium tracking-widest"><%= test.name %></span>
+              <h2 class="title-font text-sm font-medium text-gray-500 mt-3 tracking-widest"><%= test.created_at.strftime('Created on %d/%m/%Y') %></h2>
 
-              <div class="flex justify-center">
-                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><%= link_to "See Questions", test_take_path(test) %></button>
-                <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"><%= link_to "Show Results", test_candidate_result_path(test, current_user) %></button>
+              <div class="flex justify-center mt-5">
+                <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm"><%= link_to "See Questions", test_take_path(test) %></button>
+                <button class="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm"><%= link_to "Show Results", test_candidate_result_path(test, current_user) %></button>
               </div>
             </div>
           </div>
