@@ -6,14 +6,17 @@ const graph = () => {
         type: 'radar',
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January', 'March', 'May', 'June', 'July'],
             datasets: [{
-                label: 'Test',
+                label: 'This candidate',
+                borderColor: 'rgb(38, 255, 6)',
+                data: [10, 8, 2, 10, 6],},
+                {
+                label: 'All candidates',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                data: [0, 5, 2, 3, 9]
             }]
         },
-
         // Configuration options go here
         options: {}
     });
