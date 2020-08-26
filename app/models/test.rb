@@ -31,7 +31,6 @@ class Test < ApplicationRecord
       results[tag] = mean_rate
     end
     results
-    raise
   end
 
   private
