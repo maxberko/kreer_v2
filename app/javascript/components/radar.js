@@ -1,5 +1,6 @@
 const graph = () => {
     if (document.getElementById('myChart')) {
+        
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
