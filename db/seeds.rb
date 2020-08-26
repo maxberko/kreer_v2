@@ -15,7 +15,7 @@ user1 = User.create!(
 
 user2 = User.create!(
   first_name: "Alex",
-  last_name: "Big Boss",
+  last_name: "Honoré",
   email: "recruteur@gmail.com",
   password: "password",
   role: "Recruiter"
@@ -23,24 +23,80 @@ user2 = User.create!(
 
 user3 = User.create!(
   first_name: "Pierre",
-  last_name: "Pole Emploi",
-  email: "pierre@gmail.com",
+  last_name: "Paul Jack",
+  email: "candidat3@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user4 = User.create!(
   first_name: "Paul",
-  last_name: "Pole Emploi",
-  email: "paul@gmail.com",
+  last_name: "McCartney",
+  email: "candidat4@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user5 = User.create!(
   first_name: "Jacques",
-  last_name: "Pole Emploi",
-  email: "jacques@gmail.com",
+  last_name: "Haddi",
+  email: "candidat5@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user6 = User.create!(
+  first_name: "Philippe",
+  last_name: "Poutoux",
+  email: "candidat6@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user7 = User.create!(
+  first_name: "Alexis",
+  last_name: "Bourvis",
+  email: "candidat7@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user8 = User.create!(
+  first_name: "Matthieu",
+  last_name: "Deveze",
+  email: "candidat8@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user9 = User.create!(
+  first_name: "Alain",
+  last_name: "Deloin",
+  email: "candidat9@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user10 = User.create!(
+  first_name: "Paul-Henry",
+  last_name: "Matthieu",
+  email: "candidat10@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user11 = User.create!(
+  first_name: "Patrice",
+  last_name: "Berko",
+  email: "candidat11@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user12 = User.create!(
+  first_name: "Thomas",
+  last_name: "Vendrell",
+  email: "candidat12@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+user13 = User.create!(
+  first_name: "Julia",
+  last_name: "Berkojolie",
+  email: "candidat13@gmail.com",
   password: "password",
   role: "Candidate"
 )
@@ -207,19 +263,16 @@ test5.save
 
 puts "#{Test.count} tests created"
 
-input1 = Input.new(user: User.last, test_question: Test.last.test_questions.last, answer: Test.last.test_questions[0].question.answers.last)
-input1.save
+candidates = User.where(role: "Candidate")
 
-input2 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[1].question.answers.last)
-input2.save
-
-input3 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[2].question.answers.last)
-input3.save
-
-input3 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[3].question.answers.last)
-input3.save
-
-input4 = Input.new(user: User.last, test_question: Test.last.test_questions.first, answer: Test.last.test_questions[3].question.answers.last)
-input4.save
+  Test.all.each do |test|
+    candidates.sample(10).each do |u|
+      test.test_questions.each do |tq|
+        user_answer = tq.question.answers.sample
+        Input.create(user: u, test_question: tq, answer: user_answer)
+        puts "New input created"
+      end
+    end 
+  end
 
 puts "#{Input.count} inputs created"
