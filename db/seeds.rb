@@ -194,15 +194,15 @@ test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: 
 test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
 
 
-test1.tag_list.add("product", "maths", "technical")
+test1.tag_list.add("product", "maths", "technical", "mobile")
 test1.save
-test2.tag_list.add("mobile", "maths", "technical")
+test2.tag_list.add("mobile", "maths", "technical", "mobile")
 test2.save
-test3.tag_list.add("product", "maths", "technical")
+test3.tag_list.add("product", "maths", "technical", "mobile")
 test3.save
-test4.tag_list.add("mobile", "maths", "technical")
+test4.tag_list.add("mobile", "maths", "technical", "mobile")
 test4.save
-test5.tag_list.add("mobile", "maths", "technical")
+test5.tag_list.add("mobile", "maths", "technical", "mobile")
 test5.save
 
 puts "#{Test.count} tests created"

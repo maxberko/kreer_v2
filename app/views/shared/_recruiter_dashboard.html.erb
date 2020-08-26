@@ -27,7 +27,6 @@
               <span class="p-12 md:w-1/2 flex flex-col items-start inline-block py-1 px-3 rounded bg-indigo-100 text-indigo-500 text-center text-sm font-medium tracking-widest"><%= test.company_name %></span>
               <h1 class="inline-block mt-5 py-1 px-3 rounded text-black text-lg font-medium tracking-widest"><%= test.name %></h1>
               <h2 class="title-font text-sm font-medium text-gray-500 mt-3 tracking-widest"><%= test.created_at.strftime('Created on %d/%m/%Y') %></h2>
-
               <div class="flex justify-center mt-5">
                 <button class="inline-flex text-indigo-500 bg-indigo-100 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-100 rounded text-sm"><%= link_to "Questions", test_take_path(test) %></button>
                 <button class="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm"><%= link_to "See results", test_path(test) %></button>

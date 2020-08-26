@@ -21,7 +21,6 @@ class Test < ApplicationRecord
     candidates_results = candidates.map do |candidate|
       candidate.results_per_tag(self)
     end
-
     tags = candidates_results.first.keys
     results = {}
 

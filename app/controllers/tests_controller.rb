@@ -20,6 +20,9 @@ class TestsController < ApplicationController
     @candidate_completion_for_test = @candidate.completion_for_test(@test)
     @candidate_results_per_tag = @candidate.results_per_tag(@test)
     @test_mean_results = @test.mean_results
+    @labels = @test_mean_results.keys
+    @candidate_values = @candidate_results_per_tag.values
+    @mean_values = @test_mean_results.values
   end
 
   def show

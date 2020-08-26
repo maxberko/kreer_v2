@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :tests, only: %i[index show create new] do
     get '/take', to: 'tests#take'
     get 'user/:user_id/result', to: 'tests#result', as: :candidate_result
+    get 'user/:user_id/radar', to: 'tests#radar', as: :candidate_radar
+
     resources :inputs, only: %i[create]
   end
 
