@@ -1,4 +1,5 @@
-
+<!-- Display 1st section -->
+<% if current_user.role == "Candidate" %>
 <!-- 1st section -->
 <section id="intro_text" class="text-gray-700 body-font">
 <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20"><strong> <%= @test.name %> </strong></h1>
@@ -15,8 +16,9 @@
   </div>
 </section>
 
+<% elsif current_user.role == "Recruiter" %>
 <!-- 2nd section -->
-<section id="show_questions" style="display: none">
+<section id="show_questions" style="">
 <div class="div-80-center" >
   <% @questions.each_with_index do |question, index| %>
     <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
@@ -41,7 +43,7 @@
   </div>
 <!-- -----------boutons----------- -->
 
-
 </section>
-
+<% end %>
 <!-- ----------- -->
+
