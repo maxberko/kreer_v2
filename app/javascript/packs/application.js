@@ -32,6 +32,7 @@ import { scrollTest } from "../components/scroll-test.js";
 import { jsCheckboxes } from "../components/category-choice.js";
 import { initClipBoard } from "../components/init_clip_board.js";
 // import { initSelect2 } from '../components/init_select2';
+import { graph } from "../components/radar.js";
 
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('#first-btn')) {
@@ -41,6 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   jsCheckboxes();
   }
   initClipBoard();
+  graph();
   startTest();
   scrollTest();
 });
