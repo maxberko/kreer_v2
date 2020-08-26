@@ -24,8 +24,10 @@
           <div class="h-full border-2 shadow-lg border-indigo-500 rounded-lg overflow-hidden">
             <!-- <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80/720x400" alt="blog"> -->
             <div class="p-6">
+
               <h1 class="sm:text-3xl text-2xl tracking-widest title-font font-medium text-gray-500 mb-1 text-center"><%= test.name %></h1>
               <h2 class="title-font text-lg font-medium text-gray-500 mb-3"><%= test.created_at.strftime('%d/%m/%Y') %></h2>
+              <%= link_to "See all questions", test_path(test), class: "text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" %>
               <%= link_to "See results", test_path(test), class: "text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" %>
               <div class="flex items-center flex-wrap ">
                 <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
