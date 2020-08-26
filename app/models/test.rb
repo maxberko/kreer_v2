@@ -6,6 +6,7 @@ class Test < ApplicationRecord
 
   JOBTYPES = ['Associate Product Manager', 'Product Manager', 'Product Owner', 'Junior Product Manager', 'Senior Product Manager', 'Lead Product Manager', 'CTO']
   validates :name, presence: true
+  validates :company_name, presence: true
   validates :jobtype, inclusion: { in: Test::JOBTYPES }
 
   after_create :generate_tests_questions

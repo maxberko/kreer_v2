@@ -187,11 +187,11 @@ answer106 = Answer.create(description:"1", correct:false, question: question28)
 
 puts "#{Answer.count} answers created"
 
-test1 = Test.new(name: "Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
-test2 = Test.new(name: "Mobile Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
-test3 = Test.new(name: "Experienced Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
-test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
-test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test1 = Test.new(name: "Product Owner - DATA Junior", date: Date.today, jobtype: "Product Owner", company_name: "BlaBlaCar", user: user2)
+test2 = Test.new(name: "Senior Product Manager", date: Date.today, jobtype: "Senior Product Manager", company_name: "BlaBlaCar", user: user2)
+test3 = Test.new(name: "Product Manager - Bidding Strategy", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
+test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
+test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
 
 
 test1.tag_list.add("product", "maths", "technical", "mobile")
