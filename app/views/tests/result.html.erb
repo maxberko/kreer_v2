@@ -1,0 +1,7 @@
+<div class="container py-24 px-12">
+    <%= link_to "Back to dashboard", dashboard_path %>
+    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900"><%= @test.name %></h1>
+    <h3 class="text-gray-900">Created <%= @test.created_at.to_formatted_s(:short) %></h3>
+    <p><%= @candidate_results_for_test %></p>
+    
+</div>

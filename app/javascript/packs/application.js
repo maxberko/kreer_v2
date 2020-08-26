@@ -27,7 +27,10 @@ import "../stylesheets/application.scss";
 
 // Internal imports, e.g:
 import { formDisplay } from "../components/form-display.js";
+import { startTest } from "../components/start-test.js";
+import { scrollTest } from "../components/scroll-test.js";
 import { jsCheckboxes } from "../components/category-choice.js";
+import { initClipBoard } from "../components/init_clip_board.js";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -37,5 +40,9 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector('.category-choice')) {
   jsCheckboxes();
   }
+  initClipBoard();
+  startTest();
+  scrollTest();
 });
+
 

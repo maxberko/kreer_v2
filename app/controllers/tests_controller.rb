@@ -7,12 +7,32 @@ class TestsController < ApplicationController
 
   def take
     @test = Test.find(params[:test_id])
-    @questions = @test.questions
+    @questions = @test.questions.reject do |question|
+      Input.find_by(user: current_user, test_question: TestQuestion.find_by(question: question, test: @test))
+    end # pas encore répondu
+    @input = Input.new
+  end
+
+  def result
+    @candidate = User.find(params[:user_id])
+    @test = Test.find(params[:test_id])
+    @candidate_results_for_test = @candidate.result_for_test(@test)
   end
 
   def show
     @test = Test.find(params[:id])
     @questions = @test.questions
+    @candidates = @test.candidates
+    if params[:query].present?
+      sql_query =  " \
+        users.email ILIKE :query \
+        OR users.last_name ILIKE :query \
+        OR users.first_name ILIKE :query \
+      "
+      @candidates = @test.candidates.where(sql_query, query: "%#{params[:query]}%")
+    else
+    @candidates = @test.candidates
+    end
   end
 
   def new
@@ -33,6 +53,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype)
+    params.require(:test).permit(:name, :jobtype, tag_list: [])
   end
 end
