@@ -12,8 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
   <body>
-      <%= render "shared/navbar" %>
+    <%= render "shared/navbar" %>
+    <div class="body-container">
         <%= yield %>
-      <%= render "shared/footer" %>
+    </div>
+    <%= render "shared/footer" %>
     </body>
 </html>
