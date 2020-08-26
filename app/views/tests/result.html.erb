@@ -7,12 +7,7 @@
     <p><%= @candidate_results_for_test %></p>
     <p><%= @candidate_completion_for_test %></p>
 
-    <% @test_mean_results.each do |key, value| %>
-        <p><%= key %></p>
-        <p><%= value %></p>
-    <% end %>
-    
     <div class="container">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" data-labels="<%= @labels.to_json %>" data-mean-values="<%= @mean_values %>" data-candidate-values="<%= @candidate_values %>"></canvas>
     </div>
 </div>
