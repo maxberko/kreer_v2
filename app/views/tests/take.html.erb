@@ -1,17 +1,14 @@
 <!-- Display 1st section -->
 <% if current_user.role == "Candidate" %>
   <!-- 1st section -->
-  <section id="intro_text" class="text-gray-700 body-font">
-  <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20 pt-6"><strong> <%= @test.name %> </strong></h1>
-    <div class="container px-5 py-24 mx-auto flex flex-wrap">
-      <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Congratulations, here is your new recruitment campaign ! </h2>
-      <div class="md:w-3/5 md:pl-6">
-        <p class="leading-relaxed text-base"> Your profile is really interesting and human ressources in charge of your recruitment would like to know a little bit more about you.<br> Let's start with the quick test ! (few minutes only)</p>
-        <div class="flex md:mt-4 mt-6">
-          <button id="start_test" class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Start</button>
-          <!-- <p>cliquer sur le bouton crée une instance de User.test </p> -->
-
-        </div>
+  <section id="start_test" class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-10">
+        <h1 class="sm:text-3xl text-2xl tracking-widest font-medium title-font text-gray-900">Welcome to <strong><%= @test.company_name %>'s <%= @test.name %></strong> test!</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base mt-10">In this test, we'll be assessing your product technical skills through a multiple choice QCM. You should be selecting only one answer per question. <%= @test.company_name %> recruiters' will be reviewing your test within 48 hours and may contact you in case of 90% success rate. Please note that your test results will be assessible through your own personal dashboard.
+      </div>
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <button id="start_test" class="flex mx-auto tracking-widest text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg sm:mt-0">Start now</button>
       </div>
     </div>
   </section>
@@ -39,7 +36,6 @@
       </div>
     <% end %>
   </div>
-  <!-- -----------boutons----------- -->
 
   <!-- -----------boutons----------- -->
     <div id="q<%= @questions.length + 1 %>" class="div-center">
@@ -51,6 +47,7 @@
   </section>
 
 <% elsif current_user.role == "Recruiter" %>
+
   <!-- 2nd section -->
   <section id="show_questions" style="">
   <div class="div-80-center " >
@@ -75,18 +72,14 @@
       </div>
     <% end %>
   </div>
-  <!-- -----------boutons----------- -->
 
   <!-- -----------boutons----------- -->
     <div id="q<%= @questions.length + 1 %>" class="div-center">
         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering the test !</h2>
-        <p class="leading-relaxed text-base">Your answers are under review by recruiters. No worries, you will be contacted soon</p>
+        <p class="leading-relaxed text-base">Should you be successful, our recruiters will be in touch shortly! In the meantime, feel free to check out your results!.</p>
         <button class="mt-10 inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-10 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
     </div>
 
   </section>
-
-  <!-- ----------- -->
-
 <% end %>
 
