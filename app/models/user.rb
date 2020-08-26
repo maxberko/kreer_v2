@@ -10,13 +10,19 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one_attached :photo
+  after_create :set_full_name
 
   include PgSearch::Model
   pg_search_scope :search_by_last_name_and_first_name_and_email,
-                  against: %i[last_name first_name email],
+                  against: [ :last_name, :first_name, :email, :full_name ],
                   using: {
                     tsearch: { prefix: true }
                   }
+
+  def set_full_name
+    self.full_name = "#{self.first_name} #{self.last_name}"
+    self.save
+  end
 
   def result_for_test(test)
     inputs = []
