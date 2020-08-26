@@ -1,76 +1,84 @@
 <!-- Display 1st section -->
 <% if current_user.role == "Candidate" %>
-<!-- 1st section -->
-<section id="intro_text" class="text-gray-700 body-font">
-<h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20"><strong> <%= @test.name %> </strong></h1>
-  <div class="container px-5 py-24 mx-auto flex flex-wrap">
-    <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Congratulations, here is your new recruitment campaign ! </h2>
-    <div class="md:w-3/5 md:pl-6">
-      <p class="leading-relaxed text-base"> Your profile is really interesting and human ressources in charge of your recruitment would like to know a little bit more about you.<br> Let's start with the quick test ! (few minutes only)</p>
-      <div class="flex md:mt-4 mt-6">
-        <button id="start_test" class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Start</button>
-        <!-- <p>cliquer sur le bouton crée une instance de User.test </p> -->
+  <!-- 1st section -->
+  <section id="intro_text" class="text-gray-700 body-font">
+  <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20 pt-6"><strong> <%= @test.name %> </strong></h1>
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <h2 class="sm:text-3xl text-2xl text-gray-900 font-medium title-font mb-2 md:w-2/5">Congratulations, here is your new recruitment campaign ! </h2>
+      <div class="md:w-3/5 md:pl-6">
+        <p class="leading-relaxed text-base"> Your profile is really interesting and human ressources in charge of your recruitment would like to know a little bit more about you.<br> Let's start with the quick test ! (few minutes only)</p>
+        <div class="flex md:mt-4 mt-6">
+          <button id="start_test" class="inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-indigo-600 rounded">Start</button>
+          <!-- <p>cliquer sur le bouton crée une instance de User.test </p> -->
 
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="show_questions" style="display: none">
-<div class="div-80-center" >
-  <% @questions.each_with_index do |question, index| %>
-    <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
-      <div id="q<%= index + 1 %>"class="question-box">
-        <h1 class="opacity-H1" >Question n°<%= index + 1 %></h1>
-        <h2 class="plus-grand"> <%= question.description %> </h2>
-        <% question.answers.each do |answer| %>
-          <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
-          <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
-            <p><%= answer.description %></p>
-            <i class="fa fa-check"></i>
-          </div>
+  <section id="show_questions" style="display: none">
+  <div class="div-80-center " >
+    <% @questions.each_with_index do |question, index| %>
+      <div id="q<%= index + 1 %>"class="question-box pt-6">
+        <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
+          <h1 class="opacity-H1" >Question n°<%= index + 1 %></h1>
+          <h2 class="plus-grand"> <%= question.description %> </h2>
+          <% question.answers.each do |answer| %>
+            <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
+            <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
+              <p><%= answer.description %></p>
+              <i class="fa fa-check"></i>
+            </div>
+          <% end %>
+          <%= f.submit "next", class: "button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded", data: { "next-question": "q#{ index + 2 }"} %>
         <% end %>
-        <%= f.submit "next", class: "button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded" %>
       </div>
     <% end %>
-  <% end %>
-</div>
-<!-- -----------boutons----------- -->
-  <div class="flex justify-center">
-    <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-5 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
   </div>
-<!-- -----------boutons----------- -->
+  <!-- -----------boutons----------- -->
 
-</section>
+  <!-- -----------boutons----------- -->
+    <div id="q<%= @questions.length + 1 %>" class="div-center">
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering the test !</h2>
+        <p class="leading-relaxed text-base">Your answers are under review by recruiters. Take a coffe, you will be contacted soon</p>
+        <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-5 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
+    </div>
+
+  </section>
 
 <% elsif current_user.role == "Recruiter" %>
-<!-- 2nd section -->
-<section id="show_questions" style="">
-<div class="div-80-center" >
-  <% @questions.each_with_index do |question, index| %>
-    <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
-      <div id="q<%= index + 1 %>"class="question-box">
-        <h1 class="opacity-H1" >Question n°<%= index + 1 %></h1>
-        <h2 class="plus-grand"> <%= question.description %> </h2>
-        <% question.answers.each do |answer| %>
-          <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
-          <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
-            <p><%= answer.description %></p>
-            <i class="fa fa-check"></i>
-          </div>
+  <!-- 2nd section -->
+  <section id="show_questions" style="">
+  <div class="div-80-center " >
+    <% @questions.each_with_index do |question, index| %>
+      <div id="q<%= index + 1 %>"class="question-box pt-6">
+        <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
+          <h1 class="opacity-H1" >Question n°<%= index + 1 %></h1>
+          <h2 class="plus-grand"> <%= question.description %> </h2>
+          <% question.answers.each do |answer| %>
+            <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
+            <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
+              <p><%= answer.description %></p>
+              <i class="fa fa-check"></i>
+            </div>
+          <% end %>
+          <%= f.submit "next", class: "button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded", data: { "next-question": "q#{ index + 2 }"} %>
         <% end %>
-        <%= f.submit "next", class: "button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded" %>
       </div>
     <% end %>
-  <% end %>
-</div>
-<!-- -----------boutons----------- -->
-  <div class="flex justify-center">
-    <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-5 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
   </div>
-<!-- -----------boutons----------- -->
+  <!-- -----------boutons----------- -->
 
-</section>
+  <!-- -----------boutons----------- -->
+    <div id="q<%= @questions.length + 1 %>" class="div-center">
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering the test !</h2>
+        <p class="leading-relaxed text-base">Your answers are under review by recruiters. Take a coffe, you will be contacted soon</p>
+        <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-5 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
+    </div>
+
+  </section>
+
+  <!-- ----------- -->
+
 <% end %>
-<!-- ----------- -->
 
