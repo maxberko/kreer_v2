@@ -31,6 +31,8 @@ class TestsController < ApplicationController
         users.email ILIKE :query \
         OR users.last_name ILIKE :query \
         OR users.first_name ILIKE :query \
+        OR users.full_name ILIKE :query \
+
       "
       @candidates = @test.candidates.where(sql_query, query: "%#{params[:query]}%")
     else
@@ -56,6 +58,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype, tag_list: [])
+    params.require(:test).permit(:name, :jobtype, :company_name, tag_list: [])
   end
 end
