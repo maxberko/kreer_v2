@@ -10,7 +10,7 @@
             </div>
               <p class="p-4"><strong><%= candidate.first_name %> </br></strong><strong><%= candidate.last_name %> </br></strong></p>
               <div class="flex flex-col space-y-12">
-            <button class="text-white bg-teal-500 shadow-lg border-0 p-3 px-10 px-10 mx-20 focus:outline-none hover:bg-teal-600 rounded"><%= link_to "See results", "/ruby-book" %></button>
+            <button class="text-white bg-teal-500 shadow-lg border-0 p-3 px-10 px-10 mx-20 focus:outline-none hover:bg-teal-600 rounded"><%= link_to "See results", test_candidate_result_path(@test, current_user) %></button>
             <button class="text-white bg-teal-500 shadow-lg border-0 p-3 px-10 mx-20 focus:outline-none hover:bg-teal-600 rounded"><%= link_to "Contact candidate", "/ruby-book" %></button>
           </div>
             </div>
