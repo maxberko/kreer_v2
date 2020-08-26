@@ -4,7 +4,8 @@ const scrollTest = () => {
 
   next_buttons.forEach((next_button) => {
     next_button.addEventListener("click", (event) => {
-      console.log("j'y crois moyen");
+      const nextQuestionName = event.currentTarget.dataset.nextQuestion
+      document.getElementById(nextQuestionName).scrollIntoView({ behavior: 'smooth'});
     });
   });
 }

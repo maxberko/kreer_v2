@@ -17,6 +17,9 @@ class TestsController < ApplicationController
     @candidate = User.find(params[:user_id])
     @test = Test.find(params[:test_id])
     @candidate_results_for_test = @candidate.result_for_test(@test)
+    @candidate_completion_for_test = @candidate.completion_for_test(@test)
+    @candidate_results_per_tag = @candidate.results_per_tag(@test)
+    @test_mean_results = @test.mean_results
   end
 
   def show
@@ -24,7 +27,7 @@ class TestsController < ApplicationController
     @questions = @test.questions
     @candidates = @test.candidates
     if params[:query].present?
-      sql_query =  " \
+      sql_query = " \
         users.email ILIKE :query \
         OR users.last_name ILIKE :query \
         OR users.first_name ILIKE :query \
@@ -33,7 +36,7 @@ class TestsController < ApplicationController
       "
       @candidates = @test.candidates.where(sql_query, query: "%#{params[:query]}%")
     else
-    @candidates = @test.candidates
+      @candidates = @test.candidates
     end
   end
 
@@ -55,6 +58,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:name, :jobtype, tag_list: [])
+    params.require(:test).permit(:name, :jobtype, :company_name, tag_list: [])
   end
 end

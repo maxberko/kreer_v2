@@ -14,17 +14,33 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  first_name: "Jean",
-  last_name: "Michel",
+  first_name: "Alex",
+  last_name: "Big Boss",
   email: "recruteur@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user3 = User.create!(
-  first_name: "Jean",
-  last_name: "Michel",
-  email: "candidat@gmail.com",
+  first_name: "Pierre",
+  last_name: "Pole Emploi",
+  email: "pierre@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+
+user4 = User.create!(
+  first_name: "Paul",
+  last_name: "Pole Emploi",
+  email: "paul@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+
+user5 = User.create!(
+  first_name: "Jacques",
+  last_name: "Pole Emploi",
+  email: "jacques@gmail.com",
   password: "password",
   role: "Candidate"
 )
@@ -171,11 +187,11 @@ answer106 = Answer.create(description:"1", correct:false, question: question28)
 
 puts "#{Answer.count} answers created"
 
-test1 = Test.new(name: "Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
-test2 = Test.new(name: "Mobile Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
-test3 = Test.new(name: "Experienced Product Owner", date: Date.today, jobtype: "Product Owner", user: user2)
-test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
-test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Owner", user: user2)
+test1 = Test.new(name: "Product Owner - DATA Junior", date: Date.today, jobtype: "Product Owner", company_name: "BlaBlaCar", user: user2)
+test2 = Test.new(name: "Senior Product Manager", date: Date.today, jobtype: "Senior Product Manager", company_name: "BlaBlaCar", user: user2)
+test3 = Test.new(name: "Product Manager - Bidding Strategy", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
+test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "Deezer", user: user2)
+test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "Deezer", user: user2)
 
 
 test1.tag_list.add("product", "maths", "technical")
