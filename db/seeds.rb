@@ -14,17 +14,33 @@ user1 = User.create!(
 )
 
 user2 = User.create!(
-  first_name: "Jean",
-  last_name: "Michel",
+  first_name: "Alex",
+  last_name: "Big Boss",
   email: "recruteur@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user3 = User.create!(
-  first_name: "Jean",
-  last_name: "Michel",
-  email: "candidat@gmail.com",
+  first_name: "Pierre",
+  last_name: "Pole Emploi",
+  email: "pierre@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+
+user4 = User.create!(
+  first_name: "Paul",
+  last_name: "Pole Emploi",
+  email: "paul@gmail.com",
+  password: "password",
+  role: "Candidate"
+)
+
+user5 = User.create!(
+  first_name: "Jacques",
+  last_name: "Pole Emploi",
+  email: "jacques@gmail.com",
   password: "password",
   role: "Candidate"
 )
