@@ -7,7 +7,7 @@
         Test your first candidates, for free.
       </p>
       <div class="flex w-full md:justify-start justify-center">
-        <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg"><%= link_to "Get Started", "/ruby-book" %></button>
+        <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg"><%= link_to "Get started", dashboard_path %></button>
       </div>
       <p class="text-sm mt-2 text-gray-500 w-full">We’re real about privacy. We won’t send any e-mail without explicit consent.</p>
     </div>
@@ -29,7 +29,7 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="text-center mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Why spend hundred of hours reviewing CVs ?</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Recruiters and hiring managers spend too much time filtering candidates, and not enough time meeting quality prospects.</p>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Recruiters and hiring managers spend too much time filtering candidates, and not enough time meeting quality prospects. K-reer proposes you a <strong>3 steps</strong> process in order to make the recruitment of your future product manager, an easy game.</p>
       <div class="flex mt-6 justify-center">
         <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
       </div>
@@ -43,12 +43,8 @@
         </div>
         <div class="flex-grow">
           <h2 class="text-gray-900 text-lg title-font font-medium mb-3">1. Sign up for free</h2>
-          <p class="leading-relaxed text-base">No credit card is required to create your account. No credit card is required to use all of our app.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+          <p class="leading-relaxed text-base">With a free account you will have access to your dashboard, and you will be abble to create thousands of tests and reviewing the results of your candidates. </p>
+
         </div>
       </div>
       <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
@@ -62,11 +58,7 @@
         <div class="flex-grow">
           <h2 class="text-gray-900 text-lg title-font font-medium mb-3">2. Create your first recruitment campaign</h2>
           <p class="leading-relaxed text-base">Choose the skills of your target candidate. K-reer artificial intelligence will automatically generate the perfect test in order to assess the perfect candidate.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+
         </div>
       </div>
       <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
@@ -78,16 +70,12 @@
         </div>
         <div class="flex-grow">
           <h2 class="text-gray-900 text-lg title-font font-medium mb-3">3. Get your test out there</h2>
-          <p class="leading-relaxed text-base">Share with your candidates the link of your test, or publish directly the link of your test into your job offer.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+          <p class="leading-relaxed text-base">Share with your candidates the link of your test so that they can perform the test. You can also publish directly the link of your test into your job offer.</p>
+
         </div>
       </div>
     </div>
-    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"><%= link_to "Get started", dashboard_path %></button>
   </div>
 </section>
 
@@ -103,16 +91,17 @@
                              width: 720, height: 370, crop: :fill) %>
           </div>
           <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">TUTORIAL</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Create Quizz</h1>
-            <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">HIRING</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The difficulties of hiring a Software Product Manager</h1>
+            <p class="leading-relaxed mb-3">A software product manager role is one of the hardest positions to fill, just because how new the concept actually is, how different the definitions of the job profiles are based on industry and product organization and how diverse ...</p>
             <div class="flex items-center flex-wrap ">
-              <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <a href="https://www.linkedin.com/pulse/difficulties-hiring-software-product-manager-lauri-kurki" target = "_blank" class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Read More
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
                 </svg>
               </a>
+              <a ></a>
               <span class="text-gray-600 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-300">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -122,7 +111,7 @@
               <span class="text-gray-600 inline-flex items-center leading-none text-sm">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
+                </svg>2
               </span>
             </div>
           </div>
@@ -135,11 +124,11 @@
                              width: 720, height: 370, crop: :fill) %>
           </div>
           <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">TUTORIAL</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Share and retrieve your candidate...</h1>
-            <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">VOCATIONS</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Jaime DeLanghe, 29, is a senior product manager at Etsy in Brooklyn.</h1>
+            <p class="leading-relaxed mb-3"><strong>Q. </strong>What do you do as a product manager? <br> <strong>A. </strong> I lead a team responsible for coming up with the best ways for shoppers to find items on our site, and for sellers to advertise their items to potential buyers. <br><strong>Q. </strong>Did you start out in this position? ...</p>
             <div class="flex items-center flex-wrap">
-              <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <a href="https://www.nytimes.com/2016/04/24/jobs/an-etsy-product-managers-do-it-yourself-career-path.html" target = "_blank" class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Read More
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
@@ -149,12 +138,12 @@
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
-                </svg>1.2K
+                </svg>6.2K
               </span>
               <span class="text-gray-600 inline-flex items-center leading-none text-sm">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
+                </svg>512
               </span>
             </div>
           </div>
@@ -167,11 +156,12 @@
                              width: 720, height: 370, crop: :fill) %>
           </div>
           <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">TUTORIAL</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Feedback and Analysis</h1>
-            <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+            <h2 class="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">COMPETENCES</h2>
+            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">How to evaluate product managers?</h1>
+            <p class="leading-relaxed mb-3">They need to have the right character attributes: things like empathy, creativity, initiative, curiosity and enthusiasm. They need to have cultural and values fit with their organisation, and their organisation needs to support them and help them succeed...</p>
+            <p>&nbsp;</p>
             <div class="flex items-center flex-wrap ">
-              <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <a href="https://uxdesign.cc/how-to-evaluate-product-managers-including-yourself-2af350674190" target="_blank" class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0">Read More
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"></path>
                   <path d="M12 5l7 7-7 7"></path>
@@ -181,12 +171,12 @@
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
-                </svg>1.2K
+                </svg>2,4K
               </span>
               <span class="text-gray-600 inline-flex items-center leading-none text-sm">
                 <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                </svg>6
+                </svg>120
               </span>
             </div>
           </div>
@@ -202,7 +192,7 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
       <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Sign up and start qualifying candidates</h1>
-      <button class="flex-shrink-0 text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg mt-10 sm:mt-0"><%= link_to "Sign-up", "/ruby-book" %></button>
+      <button class="flex-shrink-0 text-white bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-600 rounded text-lg mt-10 sm:mt-0"><%= link_to "Sign-up", new_user_registration_path %></button>
     </div>
   </div>
 </section>
