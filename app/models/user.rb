@@ -60,13 +60,11 @@ class User < ApplicationRecord
 
     test_questions.each do |tq|
       question_tag = tq.question.tag
-
       if total_per_tag.key?(question_tag.to_sym)
         total_per_tag[question_tag.to_sym] += 1
       else
         total_per_tag[question_tag.to_sym] = 1
       end
-
       user_input = tq.inputs.where(user: self).first
       if user_input
         inputs_per_tag[question_tag.to_sym] = [] unless inputs_per_tag.key?(question_tag.to_sym)
@@ -74,7 +72,7 @@ class User < ApplicationRecord
       end
     end
     answers = inputs.map(&:answer)
-
+    
     total_per_tag.each do |tag, count|
       if inputs_per_tag[tag]
         correct_answers_count = inputs_per_tag[tag].select do |input|

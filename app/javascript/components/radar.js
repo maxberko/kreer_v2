@@ -14,7 +14,7 @@ const graph = () => {
                 {
                 label: 'All candidates',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 5, 2, 3, 9]
+                data: [0, 5, 2, 3, 6]
             }]
         },
         // Configuration options go here
