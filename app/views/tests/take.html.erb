@@ -27,12 +27,10 @@
               <i class="fa fa-check"></i>
             </div>
           <% end %>
-          <div class="div-80-center progress-bar relative">
+         <div class="div-progress-bar progress-bar relative">
             <div class="rectangle-gris absolute rounded-lg"></div>
-            <div class="rectangle-orange absolute rounded-l-lg" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
-          </div>
-          <div class="" >
-            <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-200 rounded", data: { "next-question": "q#{ index + 2 }"} %>
+            <div class="rectangle-orange absolute rounded-l-lg mb-10" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right text-sm mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
+            <%= f.submit "Next", class: "next-btn button-next mechant text-white tracking-widest bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-teal-600 rounded text-sm sm:mt-0", data: { "next-question": "q#{ index + 2 }"} %>
           </div>
         <% end %>
       </div>
