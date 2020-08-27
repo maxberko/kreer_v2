@@ -1,0 +1,5 @@
+meta_product_name: "K-reer"
+meta_title: "K-reer - Scale Your K-reer"
+meta_description: "The app reorganize your IT recruitment processs"
+meta_image: "cover.jpg" # devrait exister dans `app / assets / images /`
+twitter_account: "@product_twitter_account" # requis pour les cartes Twitter
