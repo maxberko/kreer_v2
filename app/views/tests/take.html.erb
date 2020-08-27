@@ -19,7 +19,7 @@
       <div id="q<%= index + 1 %>"class="question-box pt-6">
         <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
           <span class="inline-block mb-2 py-1 px-3 rounded bg-indigo-100 text-indigo-500 text-sm font-medium tracking-widest" >Question n°<%= index + 1 %></span>
-          <h2 class="tracking-widest plus-grand"> <%= question.description %> </h2>
+          <h2 class="tracking-widest plus-grand mb-4"> <%= question.description %> </h2>
           <% question.answers.each do |answer| %>
             <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
             <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
@@ -31,31 +31,38 @@
             <div class="rectangle-gris absolute rounded-lg"></div>
             <div class="rectangle-orange absolute rounded-l-lg" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
           </div>
-          <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-200 rounded", data: { "next-question": "q#{ index + 2 }"} %>
+          <div class="" >
+            <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-200 rounded", data: { "next-question": "q#{ index + 2 }"} %>
+          </div>
         <% end %>
       </div>
     <% end %>
   </div>
 
   <!-- -----------boutons----------- -->
-    <div id="q<%= @questions.length + 1 %>" class="div-center items-end">
-        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering our test!</h2>
-        <p class="leading-relaxed text-base">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard.</p>
-        <button class="mt-10 inline-flex text-white bg-teal-400 border-0 py-2 px-6 mb-10 focus:outline-none hover:bg-orange-200 rounded text-lg"><%= link_to "Finish", dashboard_path %></button>
-    </div>
-
+      <section id="q<%= @questions.length + 1 %>" class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full">
+            <h1 class="sm:text-3xl text-2xl tracking-widest font-medium title-font text-gray-900">Thank you for answering the test !</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base mt-10">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard below.</p>
+          </div>
+          <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto mt-10">
+            <button id="start_test" class="flex mx-auto tracking-widest text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-sm sm:mt-0"><%= link_to "Back to dashboard", dashboard_path %></button>
+          </div>
+        </div>
+      </section>
   </section>
 
 <% elsif current_user.role == "Recruiter" %>
 
   <!-- 2nd section -->
   <section id="show_questions" style="">
-  <div class="div-80-center " >
+  <div class="div-80-center" >
     <% @questions.each_with_index do |question, index| %>
       <div id="q<%= index + 1 %>"class="question-box pt-6">
         <%= simple_form_for [TestQuestion.find_by(test:@test, question:question), @input], remote: true do |f| %>
           <span class="inline-block mb-2 py-1 px-3 rounded bg-indigo-100 text-indigo-500 text-sm font-medium tracking-widest" >Question n°<%= index + 1 %></span>
-          <h2 class="plus-grand"> <%= question.description %> </h2>
+          <h2 class="tracking-widest plus-grand mb-4"> <%= question.description %> </h2>
           <% question.answers.each do |answer| %>
             <input class="hidden" type="checkbox" name="answer[<%= answer.id %>]" id="answer_<%= answer.id %>">
             <div class="category-choice mb-2" data-for="answer_<%= answer.id %>">
@@ -63,23 +70,28 @@
               <i class="fa fa-check"></i>
             </div>
           <% end %>
-          <div class="div-80-center progress-bar relative">
+          <div class="div-progress-bar progress-bar relative">
             <div class="rectangle-gris absolute rounded-lg"></div>
-            <div class="rectangle-orange absolute rounded-l-lg" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
+            <div class="rectangle-orange absolute rounded-l-lg mb-10" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right text-sm mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
+            <%= f.submit "Next", class: "next-btn button-next mechant text-white tracking-widest bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-teal-600 rounded text-sm sm:mt-0", data: { "next-question": "q#{ index + 2 }"} %>
           </div>
-          <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded", data: { "next-question": "q#{ index + 2 }"} %>
         <% end %>
       </div>
     <% end %>
   </div>
 
   <!-- -----------boutons----------- -->
-    <div id="q<%= @questions.length + 1 %>" class="div-center">
-        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering the test !</h2>
-        <p class="leading-relaxed text-base">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard</p>
-        <button class="mt-10 inline-flex text-white bg-teal-500 border-0 py-2 px-6 mb-10 focus:outline-none hover:bg-orange-500 rounded text-lg"><%= link_to "Finish !", dashboard_path %></button>
+  <section id="q<%= @questions.length + 1 %>" class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full">
+        <h1 class="sm:text-3xl text-2xl tracking-widest font-medium title-font text-gray-900">Thank you for answering the test !</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base mt-10">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard below.</p>
+      </div>
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto mt-10">
+        <button id="start_test" class="flex mx-auto tracking-widest text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-sm sm:mt-0"><%= link_to "Back to dashboard", dashboard_path %></button>
+      </div>
     </div>
-
   </section>
+</section>
 <% end %>
 
