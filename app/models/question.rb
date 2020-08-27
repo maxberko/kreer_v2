@@ -8,6 +8,6 @@ class Question < ApplicationRecord
                   product: "Product",
                   maths: "Maths",
                   mobile: "Mobile",
-                  market_research: "Market Research",
-                  product_design: "Product Design" }
+                  software: "Software",
+                  agile: "Agile" }
 end

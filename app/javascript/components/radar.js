@@ -13,16 +13,29 @@ const graph = () => {
             labels: labels,
             datasets: [{
                 label: 'This candidate',
-                borderColor: 'rgb(38, 255, 6)',
+                borderColor: 'rgb(34, 233, 150, 1)',
                 data: candidateValues,},
                 {
                 label: 'All candidates',
-                borderColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgba(86, 211, 255, 1)',
                 data: meanValues
             }]
         },
         // Configuration options go here
-        options: {}
+        options: {
+            scale: {
+                ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    fontSize: 17,
+                }
+            }
+        }
     });
     }
 };
