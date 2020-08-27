@@ -25,6 +25,7 @@ const graph = () => {
         options: {
             scale: {
                 ticks: {
+                    suggestedMin: 0,
                     suggestedMax: 100,
                 },
             },
