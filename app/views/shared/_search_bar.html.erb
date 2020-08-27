@@ -2,7 +2,7 @@
   <%= form_tag test_path(@test), method: :get do %>
     <%= text_field_tag :query,
                        params[:query],
-                       class: "flex bg-white rounded border border-gray-400 focus:outline-none shadow-5xl focus:border-purple-500 text-black py-2 px-6 sm:px-48 custom-input",
+                       class: "flex bg-white rounded border border-gray-400 focus:outline-none shadow-4xl focus:border-purple-500 text-black py-2 px-4 sm:px-48 custom-input",
                        placeholder: "Search for a candidate" %>
   <% end %>
 </div>

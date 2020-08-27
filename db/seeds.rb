@@ -256,8 +256,6 @@ test3.tag_list.add("product", "maths", "technical", "mobile")
 test3.save
 test4.tag_list.add("mobile", "maths", "technical", "mobile")
 test4.save
-test5.tag_list.add("mobile", "maths", "technical", "mobile")
-test5.save
 
 puts "#{Test.count} tests created"
 
