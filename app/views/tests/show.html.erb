@@ -25,7 +25,17 @@
     <%= render "shared/waves" %>
     <!--Waves end-->
 </section>
-
-<div class="-mt-5">
-<%= render "shared/card_candidates" %>
-</div>
+<% if @candidates == [] %>
+<section class="text-gray-700 body-font relative">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-5xl font-medium title-font mb-4 text-purple-600">No  results...</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-xl">As soon as candidates will perform the test there answers will appear here</p>
+    </div>
+  </div>
+</section>
+<% else  %>
+  <div class="-mt-5">
+  <%= render "shared/card_candidates" %>
+  </div>
+<% end %>
