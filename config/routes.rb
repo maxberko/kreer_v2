@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   devise_for :users
   post '/test_questions/:id/inputs', to: "inputs#create", as: :test_question_inputs
   get '/contact', to: 'pages#contact'
+
+  get '/dashboard', to: 'pages#dashboard', as: 'user_root'
 end
