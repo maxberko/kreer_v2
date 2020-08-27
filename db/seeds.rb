@@ -6,47 +6,47 @@ Test.destroy_all
 User.destroy_all
 
 user1 = User.create!(
-  first_name: "Louis",
-  last_name: "Deboutin",
+  first_name: "Maxime",
+  last_name: "Berko",
   email: "test1@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user2 = User.create!(
-  first_name: "Alex",
-  last_name: "Honoré",
+  first_name: "Robin",
+  last_name: "Crochet",
   email: "recruteur@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user3 = User.create!(
-  first_name: "Pierre",
-  last_name: "Paul Jack",
+  first_name: "Romain",
+  last_name: "Ponsot",
   email: "candidat3@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user4 = User.create!(
-  first_name: "Paul",
-  last_name: "McCartney",
+  first_name: "Manon",
+  last_name: "Demandolx",
   email: "candidat4@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user5 = User.create!(
-  first_name: "Jacques",
-  last_name: "Haddi",
+  first_name: "Béline",
+  last_name: "Neveu",
   email: "candidat5@gmail.com",
   password: "password",
   role: "Candidate"
 )
 user6 = User.create!(
   first_name: "Philippe",
-  last_name: "Poutoux",
+  last_name: "Lelien",
   email: "candidat6@gmail.com",
   password: "password",
   role: "Candidate"
@@ -66,8 +66,8 @@ user8 = User.create!(
   role: "Candidate"
 )
 user9 = User.create!(
-  first_name: "Alain",
-  last_name: "Deloin",
+  first_name: "Paul",
+  last_name: "Marmier",
   email: "candidat9@gmail.com",
   password: "password",
   role: "Candidate"
