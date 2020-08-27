@@ -61,7 +61,7 @@
                 <canvas id="myChart" data-labels="<%= @labels.to_json %>" data-mean-values="<%= @mean_values %>" data-candidate-values="<%= @candidate_values %>"></canvas>
             </div>
         </div>
-        <button class="text-white bg-teal-500 shadow-lg border-0 p-3 mx-20 focus:outline-none hover:bg-teal-600 rounded w-2/6 flex justify-center"><%= link_to "Contact candidate", "/ruby-book" %></button>
+        <button class="text-white bg-teal-500 shadow-lg border-0 p-3 px-10 mx-20 focus:outline-none hover:bg-teal-600 rounded"><%= mail_to "#{@candidate.email}", "Contact #{@candidate.first_name}" %></button>
     </div>
 <% elsif current_user.role == "Candidate" %>
     <section class="header text-white body-font">
