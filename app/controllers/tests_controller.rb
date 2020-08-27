@@ -29,6 +29,10 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
     @questions = @test.questions
     @candidates = @test.candidates
+    # @candidate = User.find(params[:user_id])
+    # @candidate_results_for_test = candidate.result_for_test(@test)
+    # @candidate_completion_for_test = candidate.completion_for_test(@test)
+    # @candidate_results_per_tag = candidate.results_per_tag(@test)
     if params[:query].present?
       sql_query = " \
         users.email ILIKE :query \
