@@ -283,8 +283,6 @@ test1 = Test.new(name: "Product Owner - DATA Junior", date: Date.today, jobtype:
 test2 = Test.new(name: "Senior Product Manager", date: Date.today, jobtype: "Senior Product Manager", company_name: "BlaBlaCar", user: user2)
 test3 = Test.new(name: "Product Manager - Bidding Strategy", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
 test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
-test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
-
 
 test1.tag_list.add("product", "maths", "technical", "mobile", "agile", "software")
 test1.save
@@ -308,7 +306,7 @@ candidates = User.where(role: "Candidate")
         Input.create(user: u, test_question: tq, answer: user_answer)
         puts "New input created"
       end
-    end 
+    end
   end
 
 puts "#{Input.count} inputs created"
