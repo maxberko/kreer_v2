@@ -28,8 +28,8 @@
             </div>
           <% end %>
           <div class="div-80-center progress-bar relative">
-            <div class="rectangle-gris absolute"></div>
-            <div class="rectangle-orange absolute" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
+            <div class="rectangle-gris absolute rounded-lg"></div>
+            <div class="rectangle-orange absolute rounded-l-lg" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
           </div>
           <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-200 rounded", data: { "next-question": "q#{ index + 2 }"} %>
         <% end %>
@@ -40,7 +40,7 @@
   <!-- -----------boutons----------- -->
     <div id="q<%= @questions.length + 1 %>" class="div-center items-end">
         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Thank you for answering our test!</h2>
-        <p class="leading-relaxed text-base">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard</p>
+        <p class="leading-relaxed text-base">Your answers are currently under review by <%= @test.company_name %> recruiters'. You should expect to hear back from them 48 hours after your test submission. In the meantime, feel free to check out your results by accessing your dashboard.</p>
         <button class="mt-10 inline-flex text-white bg-teal-400 border-0 py-2 px-6 mb-10 focus:outline-none hover:bg-orange-200 rounded text-lg"><%= link_to "Finish", dashboard_path %></button>
     </div>
 
@@ -64,10 +64,10 @@
             </div>
           <% end %>
           <div class="div-80-center progress-bar relative">
-            <div class="rectangle-gris absolute"></div>
-            <div class="rectangle-orange absolute" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
+            <div class="rectangle-gris absolute rounded-lg"></div>
+            <div class="rectangle-orange absolute rounded-l-lg" style="width: <%= ((index + 1).to_f)/((@questions.length ).to_f)*100 %>%;"><p class="text-right mr-3 p-0 m-0 text-white"><%= (((index + 1).to_f)/((@questions.length ).to_f)*100).to_i %>%</p></div>
           </div>
-          <%= f.submit "Next", class: "button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded", data: { "next-question": "q#{ index + 2 }"} %>
+          <%= f.submit "Next", class: "mt-10 button-next mechant inline-flex text-white bg-indigo-500 border-0 py-1 px-4 focus:outline-none hover:bg-orange-600 rounded", data: { "next-question": "q#{ index + 2 }"} %>
         <% end %>
       </div>
     <% end %>
