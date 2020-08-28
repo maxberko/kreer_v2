@@ -11,29 +11,29 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
           <%= f.label :'Your role is*: ' %>
-          <%= f.select :role, ['Recruiter', 'Candidate'], :include_blank => true, class: "tracking-widest bg-white items-center rounded border border-gray-200 focus:outline-none focus:border-gray-200 text-base px-4 py-2 mb-4" %>
+          <%= f.select :role, ['Recruiter', 'Candidate'], :include_blank => true, class: "bg-white items-center rounded border border-gray-200 focus:outline-none focus:border-gray-200 text-base px-4 py-2 mb-4" %>
           <div>
             <br>
           </div>
           <!-- <%= f.label :email %> -->
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "tracking-widest bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Email" %>
 
 
           <!-- <%= f.label :'First Name' %> -->
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "tracking-widest bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "First Name"  %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "First Name"  %>
 
           <!-- <%= f.label :'Last Name' %> -->
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "tracking-widest bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" , placeholder: "Last Name" %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4" , placeholder: "Last Name" %>
 
           <!-- <%= f.label :'Password' %> -->
           <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>
-          <%= f.password_field :password, autocomplete: "new-password", class: "tracking-widest bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Password"  %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Password"  %>
           <% if @minimum_password_length %>
           <% end %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "tracking-widest bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Confirm password"  %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-white items-center rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Confirm password"  %>
 
         <div class="actions items-center">
-          <%= f.submit "Sign up", class: "text-white tracking-widest items-center bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-500 rounded text-sm" %>
+          <%= f.submit "Sign up", class: "text-white items-center bg-teal-500 border-0 py-2 px-8 focus:outline-none hover:bg-teal-500 rounded text-lg" %>
         </div>
       <% end %>
 

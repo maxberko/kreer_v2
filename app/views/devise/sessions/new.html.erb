@@ -3,15 +3,15 @@
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "sm:w-3/5 md:w-2/5 lg:w-2/6" }) do |f| %>
     <div class="form-inputs min-w-1/2">
       <div class="bg-gray-200 rounded-lg p-8 flex flex-col w-full items-center">
-        <h2 class="text-gray-900 text-xl tracking-widest font-medium title-font mb-5">K-Reer logins</h2>
+        <h2 class="text-gray-900 text-xl font-medium title-font mb-5">K-Reer login</h2>
 
-        <%= f.label :Email, class: " tracking-widest mb-4" %>
+        <%= f.label :Email, class: "mb-4" %>
         <%= f.email_field :email, required: false, autofocus: true, input_html: { autocomplete: "email" }, autocomplete: "email", class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-6", placeholder: "Email" %>
-        <%= f.label :Password, class: "tracking-widest mb-4" %>
+        <%= f.label :Password, class: "mb-4" %>
         <%= f.password_field :password, required: false, autofocus: true, input_html: { autocomplete: "current-password" }, class: "bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2 mb-4", placeholder: "Password" %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class: "text-white bg-teal-500 tracking-widest border-0 py-2 px-8 mt-6 focus:outline-none hover:bg-teal-500 rounded text-sm" %>
+          <%= f.button :submit, "Log in", class: "text-white bg-teal-500 border-0 py-2 px-8 mt-6 focus:outline-none hover:bg-teal-500 rounded text-lg" %>
         </div>
       <% end %>
       <br>
