@@ -20,13 +20,13 @@
     </nav>
 
     <% if user_signed_in? %>
-    <button class="inline-flex items-center tracking-widest bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mt-4 md:mt-0"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <button class="inline-flex items-center bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mt-4 md:mt-0"><%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
     </button>
    <% else %>
-      <button class="inline-flex items-center tracking-widest bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mt-4 md:mt-0"><%= link_to "Login", new_user_session_path %>
+      <button class="inline-flex items-center bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mt-4 md:mt-0"><%= link_to "Login", new_user_session_path %>
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>

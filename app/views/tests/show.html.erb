@@ -1,9 +1,11 @@
-
 <section class="header text-white body-font">
-<div class="flex flex-row items-center mx-24">
-  <button class="p-0 arrowsize inline-flex text-white bg-purple-500 border-0 focus:outline-none hover:text-teal-600 "><%= link_to " ←", "/dashboard" %></button>
-  <button class="inline-flex text-white tracking-widest bg-purple-500 border-0 py-5 px-8 focus:outline-none hover:text-teal-600 text-2xl"><%= link_to " My campaigns", "/dashboard" %></button>
+
+<div class="container px-5 py-5 mx-auto">
+  <div class="text-center">
+    <h1 class="text-4xl py-5 px-8"><strong><%= @test.name %></strong></h1>
+  </div>
 </div>
+
 <div class="mt-2">
   <div class="flex justify-center clipboard text-black mx-auto">
     <i class="far fa-copy bg-white p-3 clipper mx-1"></i>
@@ -12,25 +14,28 @@
           <a class="inline-flex items-center bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mx-2 md:mt-0">Copy</a>
         </button>
   </div>
-  <p class="flex justify-center">Share this link on a job offer or send it to candidates</p>
+  <p class="flex justify-center mt-2">Share this link on a job offer or send it to job applicants</p>
 </div>
 
+<<<<<<< HEAD
 <div class="container px-5 py-12 mx-auto">
   <div class="text-center mb-6">
     <h1 class="sm:text-5xl text-2xl font-medium title-font text-black-500 mb-4"><%= @test.name %></h1>
   </div>
 </div>
-    <%= render "shared/search_bar" %>
+
     <!--Waves Container-->
     <%= render "shared/waves" %>
     <!--Waves end-->
 </section>
+
+<!--placeholder message when there is no results yet-->
 <% if @candidates == [] %>
 <section class="text-gray-700 body-font relative">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-5xl font-medium title-font mb-1 text-gray-900">No results...</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-xl">As soon as candidates will perform the test, answers will appear here.</p>
+      <h1 class="sm:text-3xl text-5xl font-medium title-font mb-1 text-gray-900">Sorry, you do have any results yet...</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-sm">Please do make sure that you have properly shared your test's link as per copied above with all your applicants. Once done, you can just sit and relax whilst your applicants are taking the test. Results would start showing up as soon as a test is being started by an applicant.</p>
     </div>
   </div>
 </section>

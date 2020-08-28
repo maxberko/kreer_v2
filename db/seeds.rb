@@ -6,47 +6,47 @@ Test.destroy_all
 User.destroy_all
 
 user1 = User.create!(
-  first_name: "Louis",
-  last_name: "Deboutin",
+  first_name: "Maxime",
+  last_name: "Berko",
   email: "test1@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user2 = User.create!(
-  first_name: "Alex",
-  last_name: "Honoré",
+  first_name: "Robin",
+  last_name: "Crochet",
   email: "recruteur@gmail.com",
   password: "password",
   role: "Recruiter"
 )
 
 user3 = User.create!(
-  first_name: "Pierre",
-  last_name: "Paul Jack",
+  first_name: "Romain",
+  last_name: "Ponsot",
   email: "candidat3@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user4 = User.create!(
-  first_name: "Paul",
-  last_name: "McCartney",
+  first_name: "Manon",
+  last_name: "Demandolx",
   email: "candidat4@gmail.com",
   password: "password",
   role: "Candidate"
 )
 
 user5 = User.create!(
-  first_name: "Jacques",
-  last_name: "Haddi",
+  first_name: "Béline",
+  last_name: "Neveu",
   email: "candidat5@gmail.com",
   password: "password",
   role: "Candidate"
 )
 user6 = User.create!(
   first_name: "Philippe",
-  last_name: "Poutoux",
+  last_name: "Lelien",
   email: "candidat6@gmail.com",
   password: "password",
   role: "Candidate"
@@ -66,8 +66,8 @@ user8 = User.create!(
   role: "Candidate"
 )
 user9 = User.create!(
-  first_name: "Alain",
-  last_name: "Deloin",
+  first_name: "Paul",
+  last_name: "Marmier",
   email: "candidat9@gmail.com",
   password: "password",
   role: "Candidate"
@@ -252,30 +252,30 @@ answer107 = Answer.create(description:"Mixpanel", correct:true, question:questio
 answer108 = Answer.create(description:"Jira", correct:false, question:question29)
 answer109 = Answer.create(description:"Cloudinary", correct:false, question:question29)
 answer110 = Answer.create(description:"Mailchimp", correct:false, question:question29)
-answer111= Answer.create(description:"10", correct:false, question:question30)
-answer112= Answer.create(description:"11", correct:true, question:question30)
-answer113= Answer.create(description:"12", correct:false, question:question30)
-answer114= Answer.create(description:"None", correct:false, question:question30)
-answer115= Answer.create(description:"Sprint", correct:true, question:question31)
-answer116= Answer.create(description:"Trello", correct:false, question:question31)
-answer117= Answer.create(description:"White boards", correct:false, question:question31)
-answer118= Answer.create(description:"Black boards", correct:false, question:question31)
-answer119= Answer.create(description:"In the back-end", correct:false, question:question32)
-answer120= Answer.create(description:"In the front-end", correct:true, question:question32)
-answer121= Answer.create(description:"Jira", correct:true, question:question33)
-answer122= Answer.create(description:"Pen & Paper", correct:false, question:question33)
-answer123= Answer.create(description:"Adobe XD", correct:false, question:question33)
-answer124= Answer.create(description:"Figma", correct:false, question:question33)
-answer125= Answer.create(description:"Stand-up", correct:false, question:question35)
-answer126= Answer.create(description:"Grooming", correct:false, question:question35)
-answer127= Answer.create(description:"Sprint planning", correct:false, question:question35)
-answer128= Answer.create(description:"Sprint rehearsal", correct:true, question:question35)
-answer129= Answer.create(description:"daily team-sync", correct:true, question:question36)
-answer130= Answer.create(description:"warm-up", correct:false, question:question36)
-answer131= Answer.create(description:"client meeting", correct:false, question:question36)
-answer132= Answer.create(description:"Squad", correct:false, question:question37)
-answer133= Answer.create(description:"Guild", correct:false, question:question37)
-answer134= Answer.create(description:"Tactical team", correct:true, question:question37)
+answer111 = Answer.create(description:"10", correct:false, question:question30)
+answer112 = Answer.create(description:"11", correct:true, question:question30)
+answer113 = Answer.create(description:"12", correct:false, question:question30)
+answer114 = Answer.create(description:"None", correct:false, question:question30)
+answer115 = Answer.create(description:"Sprint", correct:true, question:question31)
+answer116 = Answer.create(description:"Trello", correct:false, question:question31)
+answer117 = Answer.create(description:"White boards", correct:false, question:question31)
+answer118 = Answer.create(description:"Black boards", correct:false, question:question31)
+answer119 = Answer.create(description:"In the back-end", correct:false, question:question32)
+answer120 = Answer.create(description:"In the front-end", correct:true, question:question32)
+answer121 = Answer.create(description:"Jira", correct:true, question:question33)
+answer122 = Answer.create(description:"Pen & Paper", correct:false, question:question33)
+answer123 = Answer.create(description:"Adobe XD", correct:false, question:question33)
+answer124 = Answer.create(description:"Figma", correct:false, question:question33)
+answer125 = Answer.create(description:"Stand-up", correct:false, question:question35)
+answer126 = Answer.create(description:"Grooming", correct:false, question:question35)
+answer127 = Answer.create(description:"Sprint planning", correct:false, question:question35)
+answer128 = Answer.create(description:"Sprint rehearsal", correct:true, question:question35)
+answer129 = Answer.create(description:"daily team-sync", correct:true, question:question36)
+answer130 = Answer.create(description:"warm-up", correct:false, question:question36)
+answer131 = Answer.create(description:"client meeting", correct:false, question:question36)
+answer132 = Answer.create(description:"Squad", correct:false, question:question37)
+answer133 = Answer.create(description:"Guild", correct:false, question:question37)
+answer134 = Answer.create(description:"Tactical team", correct:true, question:question37)
 
 puts "#{Answer.count} answers created"
 
@@ -283,8 +283,6 @@ test1 = Test.new(name: "Product Owner - DATA Junior", date: Date.today, jobtype:
 test2 = Test.new(name: "Senior Product Manager", date: Date.today, jobtype: "Senior Product Manager", company_name: "BlaBlaCar", user: user2)
 test3 = Test.new(name: "Product Manager - Bidding Strategy", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
 test4 = Test.new(name: "Enterprise Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
-test5 = Test.new(name: "Junior Product Manager", date: Date.today, jobtype: "Product Manager", company_name: "BlaBlaCar", user: user2)
-
 
 test1.tag_list.add("product", "maths", "technical", "mobile", "agile", "software")
 test1.save
@@ -294,8 +292,6 @@ test3.tag_list.add("product", "maths", "technical", "mobile", "agile", "software
 test3.save
 test4.tag_list.add("mobile", "maths", "technical", "mobile", "agile", "software")
 test4.save
-test5.tag_list.add("mobile", "maths", "technical", "mobile", "agile", "software")
-test5.save
 
 puts "#{Test.count} tests created"
 
@@ -308,7 +304,7 @@ candidates = User.where(role: "Candidate")
         Input.create(user: u, test_question: tq, answer: user_answer)
         puts "New input created"
       end
-    end 
+    end
   end
 
 puts "#{Input.count} inputs created"
