@@ -1,29 +1,31 @@
 <section class="header text-white body-font">
-
-<div class="container px-5 py-5 mx-auto">
-  <div class="text-center">
-    <h1 class="text-4xl py-5 px-8"><strong><%= @test.name %></strong></h1>
+  <div class="flex flex-row items-center mx-24">
+    <button class="inline-flex text-white bg-purple-500 border-0 py-2 px-2 focus:outline-none hover:text-teal-600 text-xl"><%= link_to " ← My campaigns", "/dashboard" %></button>
   </div>
-</div>
 
-<div class="mt-2">
-  <div class="flex justify-center clipboard text-black mx-auto">
-    <i class="far fa-copy bg-white p-3 clipper mx-1"></i>
-      <input id="foo" class="rounded" value="http://www.k-reer.com<%= test_take_path(@test) %>">
-        <button class="clipboardbtn" data-clipboard-target="#foo">
-          <a class="inline-flex items-center bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mx-2 md:mt-0">Copy</a>
-        </button>
+  <div class="container px-5 py-5 mx-auto">
+    <div class="text-center">
+      <h1 class="text-4xl py-5 px-8"><strong><%= @test.name %></strong></h1>
+    </div>
   </div>
-  <p class="flex justify-center mt-2">Share this link on a job offer or send it to job applicants</p>
-</div>
 
-<div class="container px-5 py-10 mx-auto">
-  <div class="text-center">
-    <h1><%= render "shared/search_bar" %></h1>
-    <p class="flex justify-center mt-2">Search for a candidate by its name or e-mail</p>
+  <div class="mt-2">
+    <div class="flex justify-center clipboard text-black mx-auto">
+      <i class="far fa-copy bg-white p-3 clipper mx-1"></i>
+        <input id="foo" class="rounded" value="http://www.k-reer.com<%= test_take_path(@test) %>">
+          <button class="clipboardbtn" data-clipboard-target="#foo">
+            <a class="inline-flex items-center bg-teal-500 border-0 py-1 px-3 focus:outline-none hover:bg-teal-600 rounded text-white mx-2 md:mt-0">Copy</a>
+          </button>
+    </div>
+    <p class="flex justify-center mt-2">Share this link on a job offer or send it to job applicants</p>
   </div>
-</div>
 
+  <div class="container px-5 py-10 mx-auto">
+    <div class="text-center">
+      <h1><%= render "shared/search_bar" %></h1>
+      <p class="flex justify-center mt-2">Search for a candidate by its name or e-mail</p>
+    </div>
+  </div>
     <!--Waves Container-->
     <%= render "shared/waves" %>
     <!--Waves end-->
